@@ -1629,6 +1629,222 @@
             .theme-dark .whatsapp-btn a:hover {
                 box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
             }
+            
+            /* THEME TOGGLE BUTTON STYLING */
+            
+            .theme-toggle-btn {
+                position: fixed;
+                bottom: 30px;
+                left: 30px;
+                z-index: 9999;
+            }
+            
+            /* Toggle Switch Styling */
+            .theme-switch {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
+            }
+            
+            .theme-switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+            
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(135deg, #FFD700, #F4B942);
+                transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+                box-shadow: 0 8px 25px rgba(244, 185, 66, 0.3);
+            }
+            
+            .slider:before {
+                position: absolute;
+                content: "☀️";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            }
+            
+            input:checked + .slider {
+                background: linear-gradient(135deg, #2c3e50, #1a1a1a);
+                box-shadow: 0 8px 25px rgba(44, 62, 80, 0.3);
+            }
+            
+            input:checked + .slider:before {
+                content: "🌙";
+                transform: translateX(26px);
+            }
+            
+            .slider.round {
+                border-radius: 34px;
+            }
+            
+            .slider.round:before {
+                border-radius: 50%;
+            }
+            
+            /* Hover Effects */
+            .theme-switch:hover .slider {
+                transform: scale(1.05);
+                box-shadow: 0 12px 35px rgba(244, 185, 66, 0.4);
+            }
+            
+            .theme-switch:hover input:checked + .slider {
+                box-shadow: 0 12px 35px rgba(44, 62, 80, 0.4);
+            }
+            
+            /* Responsive Theme Toggle */
+            @media (max-width: 768px) {
+                .theme-toggle-btn {
+                    bottom: 20px;
+                    left: 20px;
+                }
+                
+                .theme-switch {
+                    width: 55px;
+                    height: 30px;
+                }
+                
+                .slider:before {
+                    height: 22px;
+                    width: 22px;
+                    left: 4px;
+                    bottom: 4px;
+                    font-size: 12px;
+                }
+                
+                input:checked + .slider:before {
+                    transform: translateX(25px);
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .theme-toggle-btn {
+                    bottom: 15px;
+                    left: 15px;
+                }
+                
+                .theme-switch {
+                    width: 50px;
+                    height: 28px;
+                }
+                
+                .slider:before {
+                    height: 20px;
+                    width: 20px;
+                    left: 4px;
+                    bottom: 4px;
+                    font-size: 11px;
+                }
+                
+                input:checked + .slider:before {
+                    transform: translateX(22px);
+                }
+            }
+
+            /* Extra small screens - Optimize 2x2 grid */
+            @media (max-width: 480px) {
+                .footer-area .row {
+                    margin: 0 -5px;
+                }
+                
+                .footer-area .footer-widget {
+                    padding: 0 5px;
+                    margin-bottom: 20px;
+                }
+                
+                .footer-area .footer-widget h3 {
+                    font-size: 0.9rem;
+                    margin-bottom: 10px;
+                }
+                
+                .footer-area .footer-widget ul li {
+                    margin-bottom: 6px;
+                }
+                
+                .footer-area .footer-widget ul li a {
+                    font-size: 0.8rem;
+                }
+            }
+
+            /* MADE BY VISUALZ CREDIT STYLING */
+            .made-by-credit {
+                margin-top: 10px;
+                font-size: 0.9rem;
+                color: #666666;
+            }
+            
+            .visualz-link {
+                color: #F4B942 !important;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+            
+            .visualz-link:hover {
+                color: #ffffff !important;
+                text-shadow: 0 0 8px rgba(244, 185, 66, 0.6);
+                transform: translateY(-1px);
+            }
+            
+            .visualz-link::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -2px;
+                left: 50%;
+                background: linear-gradient(90deg, #F4B942, #FFD700);
+                transition: all 0.3s ease;
+                transform: translateX(-50%);
+            }
+            
+            .visualz-link:hover::after {
+                width: 100%;
+            }
+            
+            /* Dark mode styling for VISUALZ credit */
+            .theme-dark .made-by-credit {
+                color: #bdc3c7;
+            }
+            
+            .theme-dark .visualz-link {
+                color: #F4B942 !important;
+            }
+            
+            .theme-dark .visualz-link:hover {
+                color: #FFD700 !important;
+                text-shadow: 0 0 10px rgba(244, 185, 66, 0.8);
+            }
+            
+            /* Mobile responsive for credit */
+            @media (max-width: 576px) {
+                .made-by-credit {
+                    font-size: 0.8rem;
+                    margin-top: 8px;
+                }
+                
+                .copyright-text p {
+                    margin-bottom: 5px;
+                }
+            }
         </style>
     </head>
     <body>
@@ -2244,7 +2460,16 @@
                 </div>
             </div>
             <div class="copyright-area">
-                <p>© <span>Ocean Gates</span> - Professional Transport & Logistics Services | For Customs Clearance</p>
+                <div class="container">
+                    <div class="copyright-text text-center">
+                        <p>
+                            © Ocean Gates - Professional Transport & Logistics Services | For Customs Clearance
+                        </p>
+                        <p class="made-by-credit">
+                            Made by <a href="https://www.instagram.com/visualz02?igsh=MTRjeWN0M3VqdWNqag%3D%3D&utm_source=qr" target="_blank" class="visualz-link">VISUALZ</a>
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <div class="lines">
@@ -2260,6 +2485,14 @@
             <a href="https://wa.me/966568466668" target="_blank" title="Chat with us on WhatsApp">
                 <i class="icofont-whatsapp"></i>
             </a>
+        </div>
+        
+        <!-- Dark/Light Mode Toggle Button -->
+        <div class="theme-toggle-btn">
+            <label class="theme-switch" for="theme-checkbox">
+                <input type="checkbox" id="theme-checkbox">
+                <span class="slider round"></span>
+            </label>
         </div>
         
         <!-- jQuery first, then Bootstrap JS -->
@@ -2380,6 +2613,28 @@
                     card.style.opacity = '0';
                     card.style.transform = 'translateY(30px)';
                     card.style.transition = 'all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)';
+                });
+                
+                // Theme Toggle Functionality
+                const themeCheckbox = document.getElementById('theme-checkbox');
+                const body = document.body;
+                
+                // Check for saved theme preference or default to light mode
+                const savedTheme = localStorage.getItem('theme') || 'light';
+                if (savedTheme === 'dark') {
+                    body.classList.add('theme-dark');
+                    themeCheckbox.checked = true;
+                }
+                
+                // Theme toggle event listener
+                themeCheckbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        body.classList.add('theme-dark');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        body.classList.remove('theme-dark');
+                        localStorage.setItem('theme', 'light');
+                    }
                 });
             });
         </script>
