@@ -30,6 +30,14 @@
         
         <!-- Smooth Scrolling CSS -->
         <style>
+            /* CRITICAL: Force cards to be visible immediately */
+            .modern-feature-card {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+                visibility: visible !important;
+                display: block !important;
+            }
+            
             html {
                 scroll-behavior: smooth;
             }
@@ -500,6 +508,10 @@
                 height: 100%;
                 position: relative;
                 overflow: hidden;
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+                visibility: visible !important;
+                display: block !important;
             }
             
             .modern-feature-card::before {
@@ -1509,13 +1521,6 @@
             .theme-dark .feature-card:hover {
                 background-color: #3a3a3a !important;
                 border-color: #F4B942 !important;
-            }
-            
-            /* Dark Mode Buttons - Keep Original Gold Styling */
-            .theme-dark .default-btn,
-            .theme-dark .btn-modern,
-            .theme-dark .btn-story {
-                /* Keep original button styling - no changes needed */
             }
             
             /* Dark Mode Smooth Transitions */
@@ -2969,13 +2974,16 @@
                             animateCounter(stat, target);
                         });
                         
-                        // Add stagger animation to feature cards
+                        // Add subtle animation to feature cards (they're already visible)
                         const featureCards = entry.target.querySelectorAll('.modern-feature-card');
                         featureCards.forEach((card, index) => {
+                            // Add a gentle scale effect for better UX
                             setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'translateY(0)';
-                            }, index * 150);
+                                card.style.transform = 'translateY(0) scale(1.02)';
+                                setTimeout(() => {
+                                    card.style.transform = 'translateY(0) scale(1)';
+                                }, 200);
+                            }, index * 100);
                         });
                         
                         observer.unobserve(entry.target);
@@ -2990,31 +2998,15 @@
                     observer.observe(aboutSection);
                 }
                 
-                // Make sure feature cards are visible by default, then add animation
+                // Ensure feature cards are always visible - no hiding on mobile
                 document.querySelectorAll('.modern-feature-card').forEach((card, index) => {
-                    // Set initial visible state
+                    // Set visible state and animation
                     card.style.opacity = '1';
                     card.style.transform = 'translateY(0)';
                     card.style.transition = 'all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)';
-                    
-                    // Add a slight delay for stagger effect only if intersection observer is supported
-                    if ('IntersectionObserver' in window) {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(30px)';
-                    }
+                    card.style.visibility = 'visible';
+                    card.style.display = 'block';
                 });
-                
-                // Fallback: If intersection observer doesn't work, show cards after a short delay
-                setTimeout(() => {
-                    document.querySelectorAll('.modern-feature-card').forEach((card, index) => {
-                        if (card.style.opacity === '0') {
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'translateY(0)';
-                            }, index * 100);
-                        }
-                    });
-                }, 1000);
                 
                 // Theme Toggle Functionality
                 const themeCheckbox = document.getElementById('theme-checkbox');
