@@ -1753,6 +1753,10 @@
                 color: #F4B942 !important;
             }
             
+            .theme-dark .highlight-content span {
+                color: #ffffff !important;
+            }
+            
             /* Modern Footer Styles */
             .footer-info-card:hover {
                 transform: translateY(-8px) !important;
@@ -3600,65 +3604,95 @@
                 -webkit-backdrop-filter: blur(10px);
             }
 
-            /* Mobile Language Switcher */
+            /* Modern Language Toggle - Mobile */
             .mobile-language-switcher {
                 display: flex;
-                gap: 10px;
-                margin-bottom: 20px;
                 justify-content: center;
+                margin-bottom: 20px;
             }
 
-            .language-btn {
-                padding: 8px 16px;
-                border: 2px solid rgba(244, 185, 66, 0.3);
-                background: transparent;
-                color: #666;
-                border-radius: 6px;
-                font-size: 14px;
-                font-weight: 500;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                display: flex;
-                align-items: center;
-                gap: 6px;
-            }
-
-            .language-btn:hover {
-                border-color: #F4B942;
-                color: #F4B942;
-                background: rgba(244, 185, 66, 0.1);
-            }
-
-            .language-btn.active {
-                background: #F4B942;
-                color: #1a1a1a;
-                border-color: #F4B942;
-                font-weight: 600;
-            }
-
-            .language-btn i {
-                font-size: 12px;
-            }
-
-            /* Desktop Language Switcher */
+            /* Modern Language Toggle - Desktop */
             .desktop-language-switcher {
                 display: flex;
-                gap: 8px;
                 margin-left: 20px;
                 align-items: center;
             }
 
-            .desktop-language-switcher .language-btn {
-                padding: 6px 12px;
-                font-size: 13px;
-                border-radius: 4px;
-                min-width: 60px;
+            /* Modern Language Toggle Button */
+            .language-toggle {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                padding: 8px 16px;
+                background: linear-gradient(135deg, #F4B942, #FFD700);
+                border: none;
+                border-radius: 25px;
+                color: #1a1a1a;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                overflow: hidden;
+                min-width: 120px;
                 justify-content: center;
+                gap: 8px;
+                box-shadow: 0 4px 15px rgba(244, 185, 66, 0.3);
             }
 
-            .desktop-language-switcher .language-btn:hover {
-                transform: translateY(-1px);
-                box-shadow: 0 2px 8px rgba(244, 185, 66, 0.3);
+            .language-toggle:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(244, 185, 66, 0.4);
+                background: linear-gradient(135deg, #FFD700, #F4B942);
+            }
+
+            .language-toggle:active {
+                transform: translateY(0);
+                box-shadow: 0 4px 15px rgba(244, 185, 66, 0.3);
+            }
+
+            /* Language Toggle Icon */
+            .language-toggle .toggle-icon {
+                display: inline-flex;
+                align-items: center;
+                font-size: 16px;
+                transition: transform 0.4s ease;
+            }
+
+            .language-toggle.switching .toggle-icon {
+                transform: rotate(180deg);
+            }
+
+            /* Language Toggle Text */
+            .language-toggle .toggle-text {
+                position: relative;
+                overflow: hidden;
+                transition: all 0.4s ease;
+            }
+
+            .language-toggle .toggle-text span {
+                display: inline-block;
+                transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+
+            .language-toggle.switching .toggle-text span {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            /* Desktop specific styling */
+            .desktop-language-switcher .language-toggle {
+                padding: 6px 14px;
+                font-size: 13px;
+                min-width: 100px;
+            }
+
+            /* Desktop Navigation Layout */
+            .navbar-nav.me-auto {
+                margin-left: 2rem !important;
+            }
+
+            .desktop-language-switcher {
+                margin-left: auto !important;
             }
 
             /* Hide desktop language switcher on mobile */
@@ -3744,40 +3778,16 @@
                 border-top-color: rgba(244, 185, 66, 0.3);
             }
 
-            /* Dark Mode Language Switcher */
-            .theme-dark .language-btn {
-                color: #cccccc;
-                border-color: rgba(244, 185, 66, 0.4);
-            }
-
-            .theme-dark .language-btn:hover {
-                color: #F4B942;
-                border-color: #F4B942;
-                background: rgba(244, 185, 66, 0.15);
-            }
-
-            .theme-dark .language-btn.active {
-                background: #F4B942;
+            /* Dark Mode Language Toggle */
+            .theme-dark .language-toggle {
+                background: linear-gradient(135deg, #F4B942, #FFD700);
                 color: #1a1a1a;
-                border-color: #F4B942;
+                box-shadow: 0 4px 15px rgba(244, 185, 66, 0.4);
             }
 
-            /* Dark Mode Desktop Language Switcher */
-            .theme-dark .desktop-language-switcher .language-btn {
-                color: #cccccc;
-                border-color: rgba(244, 185, 66, 0.4);
-            }
-
-            .theme-dark .desktop-language-switcher .language-btn:hover {
-                color: #F4B942;
-                border-color: #F4B942;
-                background: rgba(244, 185, 66, 0.15);
-            }
-
-            .theme-dark .desktop-language-switcher .language-btn.active {
-                background: #F4B942;
-                color: #1a1a1a;
-                border-color: #F4B942;
+            .theme-dark .language-toggle:hover {
+                background: linear-gradient(135deg, #FFD700, #F4B942);
+                box-shadow: 0 8px 25px rgba(244, 185, 66, 0.5);
             }
 
             /* RTL Support for Arabic */
@@ -3825,17 +3835,87 @@
             }
 
             [dir="rtl"] .mobile-logo {
-                right: 20px;
-                left: auto;
+                right: 0 !important;
+                left: auto !important;
+                padding-right: 5px !important;
+                padding-left: 0 !important;
             }
 
             [dir="rtl"] .hamburger-btn {
-                right: auto;
-                left: 20px;
+                right: auto !important;
+                left: 20px !important;
             }
 
             [dir="rtl"] .mobile-contact-info {
                 text-align: right;
+            }
+
+            /* RTL Desktop Navigation */
+            [dir="rtl"] .navbar-nav.me-auto {
+                margin-left: 0 !important;
+                margin-right: 2rem !important;
+            }
+
+            [dir="rtl"] .desktop-language-switcher {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+            }
+
+            /* RTL Responsive Adjustments */
+            @media (max-width: 768px) {
+                [dir="rtl"] .mobile-logo {
+                    right: 0 !important;
+                    left: auto !important;
+                    padding-right: 3px !important;
+                    padding-left: 0 !important;
+                }
+
+                [dir="rtl"] .hamburger-btn {
+                    right: auto !important;
+                    left: 15px !important;
+                }
+            }
+
+            @media (max-width: 576px) {
+                [dir="rtl"] .mobile-logo {
+                    right: 0 !important;
+                    left: auto !important;
+                    padding-right: 3px !important;
+                    padding-left: 0 !important;
+                }
+
+                [dir="rtl"] .hamburger-btn {
+                    right: auto !important;
+                    left: 12px !important;
+                }
+            }
+
+            @media (max-width: 480px) {
+                [dir="rtl"] .mobile-logo {
+                    right: 0 !important;
+                    left: auto !important;
+                    padding-right: 2px !important;
+                    padding-left: 0 !important;
+                }
+
+                [dir="rtl"] .hamburger-btn {
+                    right: auto !important;
+                    left: 10px !important;
+                }
+            }
+
+            @media (max-width: 360px) {
+                [dir="rtl"] .mobile-logo {
+                    right: 0 !important;
+                    left: auto !important;
+                    padding-right: 2px !important;
+                    padding-left: 0 !important;
+                }
+
+                [dir="rtl"] .hamburger-btn {
+                    right: auto !important;
+                    left: 8px !important;
+                }
             }
             
             /* RESPONSIVE DESIGN - MOBILE ONLY */
@@ -4186,13 +4266,15 @@
                 </ul>
                 
                 <div class="mobile-menu-footer">
-                    <!-- Language Switcher -->
+                    <!-- Language Toggle -->
                     <div class="mobile-language-switcher">
-                        <button class="language-btn active" data-lang="en">
-                            <i class="icofont-flag"></i> English
-                        </button>
-                        <button class="language-btn" data-lang="ar">
-                            <i class="icofont-flag"></i> العربية
+                        <button class="language-toggle" id="mobileLanguageToggle">
+                            <span class="toggle-icon">
+                                <i class="icofont-world"></i>
+                            </span>
+                            <span class="toggle-text">
+                                <span>English</span>
+                            </span>
                         </button>
                     </div>
                     
@@ -4217,7 +4299,7 @@
                             <img src="assets/img/logo-3.png" alt="logo">
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                            <ul class="navbar-nav ms-auto">
+                            <ul class="navbar-nav me-auto">
                                 <li class="nav-item">
                                     <a href="#home" class="nav-link active" data-translate="nav_home">Home</a>
                                 </li>
@@ -4248,13 +4330,15 @@
                                 </li>
                             </ul>
                             
-                            <!-- Desktop Language Switcher -->
+                            <!-- Desktop Language Toggle -->
                             <div class="desktop-language-switcher">
-                                <button class="language-btn active" data-lang="en">
-                                    <i class="icofont-flag"></i> EN
-                                </button>
-                                <button class="language-btn" data-lang="ar">
-                                    <i class="icofont-flag"></i> عربي
+                                <button class="language-toggle" id="desktopLanguageToggle">
+                                    <span class="toggle-icon">
+                                        <i class="icofont-world"></i>
+                                    </span>
+                                    <span class="toggle-text">
+                                        <span>EN</span>
+                                    </span>
                                 </button>
                             </div>
                         </div>
@@ -4410,29 +4494,29 @@
                         <div class="col-lg-3 col-sm-6 col-3">
                             <div class="stat-item">
                                 <div class="stat-number-modern" data-target="2500">0</div>
-                                <div class="stat-label-modern">Successful Shipments</div>
-                                <div class="stat-period">This Year</div>
+                                <div class="stat-label-modern" data-translate="stat_successful_shipments">Successful Shipments</div>
+                                <div class="stat-period" data-translate="stat_this_year">This Year</div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6 col-3">
                             <div class="stat-item">
                                 <div class="stat-number-modern" data-target="75">0</div>
-                                <div class="stat-label-modern">Countries Served</div>
-                                <div class="stat-period">Worldwide</div>
+                                <div class="stat-label-modern" data-translate="stat_countries_served">Countries Served</div>
+                                <div class="stat-period" data-translate="stat_worldwide">Worldwide</div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6 col-3">
                             <div class="stat-item">
                                 <div class="stat-number-modern" data-target="99">0</div>
-                                <div class="stat-label-modern">On-Time Delivery</div>
-                                <div class="stat-period">Success Rate</div>
+                                <div class="stat-label-modern" data-translate="stat_ontime_delivery">On-Time Delivery</div>
+                                <div class="stat-period" data-translate="stat_success_rate">Success Rate</div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6 col-3">
                             <div class="stat-item">
                                 <div class="stat-number-modern" data-target="40">0</div>
-                                <div class="stat-label-modern">Years Experience</div>
-                                <div class="stat-period">Industry Leader</div>
+                                <div class="stat-label-modern" data-translate="stat_years_experience">Years Experience</div>
+                                <div class="stat-period" data-translate="stat_industry_leader">Industry Leader</div>
                             </div>
                         </div>
                     </div>
@@ -4478,12 +4562,12 @@
                                 <div class="mission-icon" style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: linear-gradient(135deg, #F4B942, #FFD700); border-radius: 50%; margin-bottom: 25px; box-shadow: 0 10px 30px rgba(244, 185, 66, 0.3);">
                                     <i class="icofont-aim" style="font-size: 40px; color: #ffffff;"></i>
                                 </div>
-                                <h3 style="color: #1a1a1a; font-size: 2rem; font-weight: 700; margin-bottom: 20px;">Our Mission</h3>
+                                <h3 data-translate="mission_title" style="color: #1a1a1a; font-size: 2rem; font-weight: 700; margin-bottom: 20px;">Our Mission</h3>
                             </div>
                             
                             <!-- Content -->
                             <div style="position: relative; z-index: 2;">
-                                <p style="font-size: 1.1rem; line-height: 1.8; color: #666; text-align: left; margin-bottom: 30px;">
+                                <p data-translate="mission_description" style="font-size: 1.1rem; line-height: 1.8; color: #666; text-align: left; margin-bottom: 30px;">
                                     Our mission is to empower businesses by providing reliable, cost-effective, and innovative logistics solutions that enable them to succeed in the global marketplace.
                                 </p>
                                 
@@ -4491,15 +4575,15 @@
                                 <div class="mission-points">
                                     <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
                                         <i class="icofont-check-circled" style="color: #F4B942; font-size: 18px; margin-right: 10px; margin-top: 2px;"></i>
-                                        <span style="color: #555; font-size: 1rem;">Building long-term partnerships based on trust</span>
+                                        <span data-translate="mission_point_1" style="color: #555; font-size: 1rem;">Building long-term partnerships based on trust</span>
                                     </div>
                                     <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
                                         <i class="icofont-check-circled" style="color: #F4B942; font-size: 18px; margin-right: 10px; margin-top: 2px;"></i>
-                                        <span style="color: #555; font-size: 1rem;">Leveraging cutting-edge technology</span>
+                                        <span data-translate="mission_point_2" style="color: #555; font-size: 1rem;">Leveraging cutting-edge technology</span>
                                     </div>
                                     <div style="display: flex; align-items: flex-start;">
                                         <i class="icofont-check-circled" style="color: #F4B942; font-size: 18px; margin-right: 10px; margin-top: 2px;"></i>
-                                        <span style="color: #555; font-size: 1rem;">Ensuring highest standards of service</span>
+                                        <span data-translate="mission_point_3" style="color: #555; font-size: 1rem;">Ensuring highest standards of service</span>
                                     </div>
                                 </div>
                             </div>
@@ -4516,12 +4600,12 @@
                                 <div class="vision-icon" style="display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: linear-gradient(135deg, #F4B942, #FFD700); border-radius: 50%; margin-bottom: 25px; box-shadow: 0 10px 30px rgba(244, 185, 66, 0.3);">
                                     <i class="icofont-eye-alt" style="font-size: 40px; color: #ffffff;"></i>
                                 </div>
-                                <h3 style="color: #1a1a1a; font-size: 2rem; font-weight: 700; margin-bottom: 20px;">Our Vision</h3>
+                                <h3 data-translate="vision_title" style="color: #1a1a1a; font-size: 2rem; font-weight: 700; margin-bottom: 20px;">Our Vision</h3>
                             </div>
                             
                             <!-- Content -->
                             <div style="position: relative; z-index: 2;">
-                                <p style="font-size: 1.1rem; line-height: 1.8; color: #666; text-align: left; margin-bottom: 30px;">
+                                <p data-translate="vision_description" style="font-size: 1.1rem; line-height: 1.8; color: #666; text-align: left; margin-bottom: 30px;">
                                     Our vision is to be the premier provider of logistics and shipping services, recognized globally for our commitment to excellence, integrity, and sustainability.
                                 </p>
                                 
@@ -4529,15 +4613,15 @@
                                 <div class="vision-points">
                                     <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
                                         <i class="icofont-star" style="color: #F4B942; font-size: 18px; margin-right: 10px; margin-top: 2px;"></i>
-                                        <span style="color: #555; font-size: 1rem;">Driving positive change in the industry</span>
+                                        <span data-translate="vision_point_1" style="color: #555; font-size: 1rem;">Driving positive change in the industry</span>
                                     </div>
                                     <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
                                         <i class="icofont-star" style="color: #F4B942; font-size: 18px; margin-right: 10px; margin-top: 2px;"></i>
-                                        <span style="color: #555; font-size: 1rem;">Creating environmentally friendly solutions</span>
+                                        <span data-translate="vision_point_2" style="color: #555; font-size: 1rem;">Creating environmentally friendly solutions</span>
                                     </div>
                                     <div style="display: flex; align-items: flex-start;">
                                         <i class="icofont-star" style="color: #F4B942; font-size: 18px; margin-right: 10px; margin-top: 2px;"></i>
-                                        <span style="color: #555; font-size: 1rem;">Being a trusted and capable partner</span>
+                                        <span data-translate="vision_point_3" style="color: #555; font-size: 1rem;">Being a trusted and capable partner</span>
                                     </div>
                                 </div>
                             </div>
@@ -4653,8 +4737,8 @@
         <div class="track-product track-product-bg pt-100">
             <div class="container">
                 <div class="track-text text-center">
-                    <h2>Keep Tracking Your Product Location</h2>
-                    <p style="color: #ffffff; font-size: 1.1rem; margin-top: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">Stay informed about your shipment's journey with real-time updates and precise location tracking throughout the delivery process.</p>
+                    <h2 data-translate="tracking_title">Keep Tracking Your Product Location</h2>
+                    <p data-translate="tracking_description" style="color: #ffffff; font-size: 1.1rem; margin-top: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">Stay informed about your shipment's journey with real-time updates and precise location tracking throughout the delivery process.</p>
                 </div>
             </div>
 
@@ -4716,31 +4800,30 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <div class="facilities-text">
-                            <h2>We Have More Facilities For You</h2>
-                            <p>Found parents would couldn't said on. That, feedback there made he was may blind you simple, its yet a own blind you ago hand. Found parents would
-                            couldn't said on. That, feedback there made he was simple.</p>
+                            <h2 data-translate="facilities_title">We Have More Facilities For You</h2>
+                            <p data-translate="facilities_description">Discover the exclusive benefits and premium services we offer to enhance your shipping experience. Our comprehensive facility network ensures your logistics needs are met with excellence.</p>
 
                             <ul>
                                 <li>
                                     <i class="icofont-check"></i>
-                                    Get membership card.
+                                    <span data-translate="facilities_benefit_1">Get membership card</span>
                                 </li>
                                 <li>
                                     <i class="icofont-check"></i>
-                                    15% off on your first delivery.
+                                    <span data-translate="facilities_benefit_2">15% off on your first delivery</span>
                                 </li>
                                 <li>
                                     <i class="icofont-check"></i>
-                                    Yearly most valuable customer award.
+                                    <span data-translate="facilities_benefit_3">Yearly most valuable customer award</span>
                                 </li>
                                 <li>
                                     <i class="icofont-check"></i>
-                                    You will be premium member after 5 delivery done.
+                                    <span data-translate="facilities_benefit_4">You will be premium member after 5 delivery done</span>
                                 </li>
                             </ul>
 
                             <div class="theme-btn">
-                                <a href="#contact" class="default-btn">Get Free Quote</a>
+                                <a href="#contact" class="default-btn" data-translate="btn_get_free_quote">Get Free Quote</a>
                             </div>
                         </div>
                     </div>
@@ -4762,7 +4845,7 @@
                         <div class="story-image">
                             <img src="assets/img/our-story.jpg" alt="Ocean Gates Logistics Operations" class="story-main-img">
                             <div class="story-badge">
-                                <span class="badge-label">Our Story</span>
+                                <span class="badge-label" data-translate="story_badge">Our Story</span>
                             </div>
                         </div>
                     </div>
@@ -4770,14 +4853,14 @@
                     <div class="col-lg-6">
                         <div class="story-content">
                             <div class="story-header">
-                                <span class="story-subtitle">Our Story</span>
-                                <h2 class="story-title">25+ Years of Logistics Excellence</h2>
+                                <span class="story-subtitle" data-translate="story_subtitle">Our Story</span>
+                                <h2 class="story-title" data-translate="story_title">25+ Years of Logistics Excellence</h2>
                             </div>
                             
                             <div class="story-text">
-                                <p class="story-intro">Founded over 25 years ago, Ocean Gates started with a simple mission: to simplify logistics for businesses of all sizes. From our humble beginnings, we have grown into a trusted international logistics provider, known for our reliability, expertise, and commitment to our clients.</p>
+                                <p class="story-intro" data-translate="story_intro">Founded over 40 years ago, Ocean Gates started with a simple mission: to simplify logistics for businesses of all sizes. From our humble beginnings, we have grown into a trusted international logistics provider, known for our reliability, expertise, and commitment to our clients.</p>
                                 
-                                <p class="story-detail">Our journey has been one of continuous growth and adaptation. We've embraced new technologies and expanded our network to meet the evolving demands of global trade, all while staying true to our core values of integrity and service excellence.</p>
+                                <p class="story-detail" data-translate="story_detail">Our journey has been one of continuous growth and adaptation. We've embraced new technologies and expanded our network to meet the evolving demands of global trade, all while staying true to our core values of integrity and service excellence.</p>
                             </div>
                             
                             <div class="story-highlights">
@@ -4808,7 +4891,7 @@
                             </div>
                             
                             <div class="story-cta">
-                                <a href="#contact" class="btn-story">Learn More About Us</a>
+                                <a href="#contact" class="btn-story" data-translate="btn_learn_more">Learn More About Us</a>
                             </div>
                         </div>
                     </div>
@@ -4823,8 +4906,8 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center mb-5">
                         <div class="section-header">
-                            <h2 class="section-main-title">Packaging and Storage</h2>
-                            <p class="section-subtitle" style="margin-top: 20px;">
+                            <h2 class="section-main-title" data-translate="packaging_storage_title">Packaging and Storage</h2>
+                            <p class="section-subtitle" data-translate="packaging_storage_description" style="margin-top: 20px;">
                                 Proper packaging and secure storage are crucial to the safety and integrity of your goods.
                             </p>
                         </div>
@@ -5235,8 +5318,8 @@
                             <a href="#home" style="display: inline-block; margin-bottom: 15px;">
                                 <img src="assets/img/logo-3.png" alt="Ocean Gates Logo" style="max-height: 50px; transition: transform 0.3s ease;">
                             </a>
-                            <h4 style="color: #ffffff; margin-bottom: 10px; font-size: 1.4rem; font-weight: 600;">Leading Logistics &amp; Worldwide Shipping</h4>
-                            <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin-bottom: 25px; max-width: 500px; margin-left: auto; margin-right: auto;">
+                            <h4 data-translate="footer_company_title" style="color: #ffffff; margin-bottom: 10px; font-size: 1.4rem; font-weight: 600;">Leading Logistics &amp; Worldwide Shipping</h4>
+                            <p data-translate="footer_company_desc" style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin-bottom: 25px; max-width: 500px; margin-left: auto; margin-right: auto;">
                                 Since 1984, Ocean Gates has been your trusted partner in global logistics.
                             </p>
                             
@@ -5265,7 +5348,7 @@
                                 <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #F4B942, #FFD700); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
                                     <i class="icofont-phone" style="font-size: 20px; color: #1a1a1a;"></i>
                         </div>
-                                <h3 style="color: #ffffff; margin: 0; font-size: 1.1rem; font-weight: 600;">Contact Info</h3>
+                                <h3 data-translate="footer_contact_title" style="color: #ffffff; margin: 0; font-size: 1.1rem; font-weight: 600;">Contact Info</h3>
                     </div>
                             <ul style="list-style: none; padding: 0; margin: 0;">
                                 <li style="margin-bottom: 10px;">
@@ -5308,7 +5391,7 @@
             <div class="copyright-area">
                 <div class="container">
                     <div class="copyright-text text-center">
-                        <p>
+                        <p data-translate="footer_copyright">
                             © Ocean Gates - Leading Logistics & Worldwide Shipping Provider Since 1984 | Headquartered in KSA
                         </p>
                         <p class="made-by-credit">
@@ -5916,8 +5999,60 @@
                     email: "abdullah@ocean-gates.com",
                     
                     // Footer
-                    footer_description: "Your trusted logistics partner in Saudi Arabia",
-                    footer_rights: "All rights reserved",
+                    footer_company_title: "Leading Logistics & Worldwide Shipping",
+                    footer_company_desc: "Since 1984, Ocean Gates has been your trusted partner in global logistics.",
+                    footer_contact_title: "Contact Info",
+                    footer_copyright: "© Ocean Gates - Leading Logistics & Worldwide Shipping Provider Since 1984 | Headquartered in KSA",
+                    
+                    // Story Section
+                    story_badge: "Our Story",
+                    story_intro: "Founded over 40 years ago, Ocean Gates started with a simple mission: to simplify logistics for businesses of all sizes. From our humble beginnings, we have grown into a trusted international logistics provider, known for our reliability, expertise, and commitment to our clients.",
+                    story_detail: "Our journey has been one of continuous growth and adaptation. We've embraced new technologies and expanded our network to meet the evolving demands of global trade, all while staying true to our core values of integrity and service excellence.",
+                    
+                    // Facilities Section
+                    facilities_title: "We Have More Facilities For You",
+                    facilities_description: "Discover the exclusive benefits and premium services we offer to enhance your shipping experience. Our comprehensive facility network ensures your logistics needs are met with excellence.",
+                    facilities_benefit_1: "Get membership card",
+                    facilities_benefit_2: "15% off on your first delivery",
+                    facilities_benefit_3: "Yearly most valuable customer award",
+                    facilities_benefit_4: "You will be premium member after 5 delivery done",
+                    btn_get_free_quote: "Get Free Quote",
+                    
+                    // Tracking Section
+                    tracking_title: "Keep Tracking Your Product Location",
+                    tracking_description: "Stay informed about your shipment's journey with real-time updates and precise location tracking throughout the delivery process.",
+                    
+                    // Mission & Vision Section
+                    mission_title: "Our Mission",
+                    mission_description: "Our mission is to empower businesses by providing reliable, cost-effective, and innovative logistics solutions that enable them to succeed in the global marketplace.",
+                    mission_point_1: "Building long-term partnerships based on trust",
+                    mission_point_2: "Leveraging cutting-edge technology",
+                    mission_point_3: "Ensuring highest standards of service",
+                    
+                    vision_title: "Our Vision",
+                    vision_description: "Our vision is to be the premier provider of logistics and shipping services, recognized globally for our commitment to excellence, integrity, and sustainability.",
+                    vision_point_1: "Driving positive change in the industry",
+                    vision_point_2: "Creating environmentally friendly solutions",
+                    vision_point_3: "Being a trusted and capable partner",
+                    
+                    // Statistics Section
+                    stat_successful_shipments: "Successful Shipments",
+                    stat_this_year: "This Year",
+                    stat_countries_served: "Countries Served",
+                    stat_worldwide: "Worldwide",
+                    stat_ontime_delivery: "On-Time Delivery",
+                    stat_success_rate: "Success Rate",
+                    stat_years_experience: "Years Experience",
+                    stat_industry_leader: "Industry Leader",
+                    
+                    // Story Section Headers
+                    story_subtitle: "Our Story",
+                    story_title: "25+ Years of Logistics Excellence",
+                    btn_learn_more: "Learn More About Us",
+                    
+                    // Packaging & Storage Section Headers
+                    packaging_storage_title: "Packaging and Storage",
+                    packaging_storage_description: "Proper packaging and secure storage are crucial to the safety and integrity of your goods.",
                     
                     // CTA Section
                     cta_title: "Ready to Ship?",
@@ -5947,17 +6082,17 @@
                     nav_contact: "اتصل بنا",
                     
                     // Hero Section
-                    hero_title: "بوابات المحيط",
+                    hero_title: "Ocean Gates",
                     hero_subtitle: "شريكك في اللوجستيات العالمية",
-                    hero_description: "بوابات المحيط هي مزود رائد للخدمات اللوجستية والشحن العالمي مع إرث من التميز يعود إلى عام 1984. مقرنا الرئيسي في المملكة العربية السعودية، وقد نمونا لنصبح اسماً موثوقاً في الصناعة، نقدم حلول سلسلة التوريد المخصصة والفعالة والآمنة التي تمتد عبر العالم.",
+                    hero_description: "Ocean Gates هي مزود رائد للخدمات اللوجستية والشحن العالمي مع إرث من التميز يعود إلى عام 1984. مقرنا الرئيسي في المملكة العربية السعودية، وقد نمونا لنصبح اسماً موثوقاً في الصناعة، نقدم حلول سلسلة التوريد المخصصة والفعالة والآمنة التي تمتد عبر العالم.",
                     btn_get_consultation: "احصل على استشارة مجانية",
                     btn_our_services: "خدماتنا",
                     btn_get_quote: "احصل على عرض سعر",
                     btn_explore_services: "استكشف الخدمات",
                     
                     // About Section
-                    about_title: "لماذا تختار بوابات المحيط؟",
-                    about_description: "في بوابات المحيط، ما يميزنا حقاً هو التزامنا الثابت بعملائنا. نحن لا نقوم بنقل البضائع فحسب، بل نبني شراكات.",
+                    about_title: "لماذا تختار Ocean Gates؟",
+                    about_description: "في Ocean Gates، ما يميزنا حقاً هو التزامنا الثابت بعملائنا. نحن لا نقوم بنقل البضائع فحسب، بل نبني شراكات.",
                     
                     // Foundation Section
                     foundation_title: "أساسنا",
@@ -5969,11 +6104,11 @@
                     
                     // Special Services Section
                     special_services_title: "الخدمات المتخصصة",
-                    special_services_description: "تتجاوز بوابات المحيط اللوجستيات القياسية لتقدم مجموعة من الخدمات المتخصصة التي تلبي المتطلبات الفريدة والصعبة.",
+                    special_services_description: "تتجاوز Ocean Gates اللوجستيات القياسية لتقدم مجموعة من الخدمات المتخصصة التي تلبي المتطلبات الفريدة والصعبة.",
                     
                     // Terms & Privacy Section
                     terms_privacy_title: "شروط الاستخدام وسياسة الخصوصية",
-                    terms_privacy_description: "تلتزم بوابات المحيط بحماية خصوصيتك وضمان تجربة آمنة عبر الإنترنت.",
+                    terms_privacy_description: "تلتزم Ocean Gates بحماية خصوصيتك وضمان تجربة آمنة عبر الإنترنت.",
                     terms_use_title: "شروط الاستخدام",
                     terms_use_description: "تحكم شروط استخدام موقعنا الإلكتروني وصولك واستخدامك لخدماتنا. باستخدام خدماتنا، فإنك توافق على الامتثال لشروطنا، بما في ذلك تلك المتعلقة بالاستخدام المقبول والملكية الفكرية وحدود المسؤولية.",
                     privacy_policy_title: "سياسة الخصوصية",
@@ -5986,23 +6121,131 @@
                     // Services
                     services_title: "خدماتنا",
                     services_subtitle: "حلول شاملة",
-                    service_1_title: "الشحن البحري",
-                    service_1_desc: "نقل محيطي فعال لبضائعك في جميع أنحاء العالم.",
-                    service_2_title: "الشحن الجوي",
-                    service_2_desc: "خدمات شحن جوي سريعة وآمنة عالمياً.",
-                    service_3_title: "النقل البري",
-                    service_3_desc: "نقل بري موثوق عبر المنطقة.",
+                    service_air_freight_title: "الشحن الجوي",
+                    service_air_freight_desc: "عندما يكون الوقت هو العامل الحاسم، الشحن الجوي هو أسرع طريقة لإيصال بضائعك إلى وجهتها. نقدم الشحن الجوي القياسي، خدمة السرعة/الأولوية، خدمات الطيران المستأجر، والتخليص الجمركي الشامل للشحنات الحساسة للوقت.",
+                    service_road_freight_title: "الشحن البري",
+                    service_road_freight_desc: "يوفر الشحن البري مرونة لا مثيل لها وخدمة من الباب إلى الباب. نقدم خدمة الحمولة الكاملة للشاحنة، أقل من حمولة الشاحنة، النقل المتخصص للبضائع المحكومة الحرارة والخطرة، بالإضافة إلى النقل البري الدولي عبر الحدود.",
+                    service_sea_freight_title: "الشحن البحري",
+                    service_sea_freight_desc: "الحل الأكثر فعالية من حيث التكلفة لنقل الكميات الكبيرة عبر المسافات الطويلة. نقدم حمولة الحاوية الكاملة، أقل من حمولة الحاوية، والشحن المحيطي المتخصص بما في ذلك الشحنات المحكومة الحرارة وكبيرة الحجم.",
+                    service_warehousing_title: "التخزين واللوجستيات",
+                    service_warehousing_desc: "حلول تخزين متطورة لتحسين سلسلة التوريد الخاصة بك. نقدم إدارة المخزون، خدمات الانتقاء والتعبئة، التوزيع، وتنفيذ التجارة الإلكترونية المتخصص لتعزيز الكفاءة.",
+                    
+                    // Feature Cards
+                    feature_experience_title: "عقود من الخبرة",
+                    feature_experience_desc: "مع إرث يعود إلى عام 1984، لدينا فهم عميق لصناعة اللوجستيات وسجل حافل من النجاح.",
+                    feature_global_title: "الوصول العالمي، الخبرة المحلية",
+                    feature_global_desc: "مقرنا الرئيسي في المملكة العربية السعودية وشبكتنا العالمية الواسعة تسمح لنا بتقديم حلول عالمية مع المعرفة المحلية اللازمة للتنقل في الجمارك واللوائح الإقليمية.",
+                    feature_customer_title: "نهج يركز على العملاء",
+                    feature_customer_desc: "نبني علاقات قوية وطويلة الأمد من خلال إعطاء الأولوية لاحتياجاتك وتقديم خدمة شخصية ومتجاوبة.",
+                    feature_technology_title: "حلول مدفوعة بالتكنولوجيا",
+                    feature_technology_desc: "نستخدم أحدث التقنيات لتوفير التتبع في الوقت الفعلي، والتواصل الشفاف، والإدارة الفعالة لشحناتك.",
+                    
+                    // Consultation Services
+                    consultation_supply_chain_title: "تحليل سلسلة التوريد",
+                    consultation_supply_chain_desc: "تحليل وتحسين شامل لعمليات سلسلة التوريد الحالية الخاصة بك.",
+                    consultation_customs_title: "الجمارك والامتثال التجاري",
+                    consultation_customs_desc: "مشورة خبيرة حول لوائح الجمارك ومتطلبات الامتثال التجاري.",
+                    consultation_cost_title: "استراتيجيات تقليل التكاليف",
+                    consultation_cost_desc: "التخطيط الاستراتيجي لتقليل تكاليف اللوجستيات مع الحفاظ على جودة الخدمة.",
+                    consultation_risk_title: "تخطيط إدارة المخاطر",
+                    consultation_risk_desc: "تقييم شامل للمخاطر واستراتيجيات التخفيف لعمليات اللوجستيات الخاصة بك.",
+                    
+                    // Special Services
+                    special_project_title: "شحن المشاريع",
+                    special_project_desc: "حلول شاملة للمشاريع المعقدة التي تتضمن شحنات كبيرة الحجم أو ثقيلة أو عالية القيمة، من التخطيط الدقيق إلى التنفيذ.",
+                    special_reverse_title: "اللوجستيات العكسية",
+                    special_reverse_desc: "الإدارة الكاملة للمرتجعات والاستدعاءات والتخلص من المنتجات، مما يساعدك على استرداد القيمة والحفاظ على رضا العملاء.",
+                    special_ecommerce_title: "تنفيذ التجارة الإلكترونية",
+                    special_ecommerce_desc: "خدمات متخصصة لقطاع التجارة الإلكترونية، توفر التكامل السلس مع المتاجر عبر الإنترنت، ومعالجة الطلبات بكفاءة، والتسليم الموثوق في الميل الأخير.",
+                    
+                    // Statistics
+                    stat_total_delivered_number: "87,357 كم",
+                    stat_total_delivered_title: "إجمالي المسلم",
+                    stat_total_delivered_desc: "كيلومترات من نقل البضائع الناجح في جميع أنحاء العالم.",
+                    stat_countries_number: "120",
+                    stat_countries_title: "الدول المسلمة",
+                    stat_countries_desc: "وصول عالمي عبر ست قارات.",
+                    stat_customers_number: "3.2 ألف",
+                    stat_customers_title: "العملاء المخدومين",
+                    stat_customers_desc: "عملاء راضين يثقون في خبرتنا اللوجستية.",
+                    stat_experience_number: "40+",
+                    stat_experience_title: "سنوات الخبرة",
+                    stat_experience_desc: "عقود من التميز المثبت في اللوجستيات.",
+                    
+                    // Company Highlights
+                    highlight_founded_title: "تأسست",
+                    highlight_founded_year: "1984",
+                    highlight_global_title: "الوصول العالمي",
+                    highlight_global_countries: "120+ دولة",
+                    
+                    // Packaging & Storage
+                    packaging_professional_title: "التعبئة المهنية",
+                    packaging_professional_desc: "يمكن لفريقنا المساعدة في خدمات التعبئة المهنية لضمان تأمين عناصرك بشكل صحيح للنقل، سواء بالجو أو البحر أو البر. نستخدم مواد عالية الجودة وأفضل الممارسات الصناعية لحماية شحنتك من الضرر.",
+                    packaging_secure_title: "التخزين الآمن",
+                    packaging_secure_desc: "مرافق التخزين لدينا مجهزة بأنظمة أمان متطورة، بما في ذلك المراقبة على مدار الساعة طوال أيام الأسبوع، وأنظمة إخماد الحرائق، والوصول المحكوم. نقدم خيارات التخزين قصيرة وطويلة الأمد في مجموعة متنوعة من البيئات، بما في ذلك المساحات المحكومة المناخ للبضائع الحساسة.",
                     
                     // Contact Info
                     phone: "+966 55 355 1911",
                     email: "abdullah@ocean-gates.com",
                     
                     // Footer
-                    footer_description: "شريكك اللوجستي الموثوق في المملكة العربية السعودية",
-                    footer_rights: "جميع الحقوق محفوظة",
+                    footer_company_title: "رائدة في اللوجستيات والشحن العالمي",
+                    footer_company_desc: "منذ عام 1984، كانت Ocean Gates شريكك الموثوق في اللوجستيات العالمية.",
+                    footer_contact_title: "معلومات الاتصال",
+                    footer_copyright: "© Ocean Gates - مزود رائد للخدمات اللوجستية والشحن العالمي منذ 1984 | المقر الرئيسي في المملكة العربية السعودية",
+                    
+                    // Story Section
+                    story_badge: "قصتنا",
+                    story_intro: "تأسست منذ أكثر من 40 عاماً، بدأت Ocean Gates بمهمة بسيطة: تبسيط اللوجستيات للشركات من جميع الأحجام. من بداياتنا المتواضعة، نمونا لنصبح مزود لوجستيات دولي موثوق، معروف بموثوقيتنا وخبرتنا والتزامنا بعملائنا.",
+                    story_detail: "كانت رحلتنا واحدة من النمو والتكيف المستمر. لقد احتضنا التقنيات الجديدة ووسعنا شبكتنا لتلبية المطالب المتطورة للتجارة العالمية، كل ذلك مع البقاء وفيين لقيمنا الأساسية من النزاهة وتميز الخدمة.",
+                    
+                    // Facilities Section
+                    facilities_title: "لدينا مرافق أكثر لك",
+                    facilities_description: "اكتشف المزايا الحصرية والخدمات المتميزة التي نقدمها لتحسين تجربة الشحن الخاصة بك. شبكة المرافق الشاملة لدينا تضمن تلبية احتياجاتك اللوجستية بتميز.",
+                    facilities_benefit_1: "احصل على بطاقة العضوية",
+                    facilities_benefit_2: "خصم 15% على أول عملية تسليم",
+                    facilities_benefit_3: "جائزة أقيم عميل سنوياً",
+                    facilities_benefit_4: "ستصبح عضو مميز بعد 5 عمليات تسليم",
+                    btn_get_free_quote: "احصل على عرض سعر مجاني",
+                    
+                    // Tracking Section
+                    tracking_title: "تابع موقع منتجك",
+                    tracking_description: "ابق على اطلاع على رحلة شحنتك مع التحديثات في الوقت الفعلي وتتبع الموقع الدقيق طوال عملية التسليم.",
+                    
+                    // Mission & Vision Section
+                    mission_title: "مهمتنا",
+                    mission_description: "مهمتنا هي تمكين الشركات من خلال توفير حلول لوجستية موثوقة وفعالة من حيث التكلفة ومبتكرة تمكنهم من النجاح في السوق العالمية.",
+                    mission_point_1: "بناء شراكات طويلة الأمد قائمة على الثقة",
+                    mission_point_2: "الاستفادة من التكنولوجيا المتطورة",
+                    mission_point_3: "ضمان أعلى معايير الخدمة",
+                    
+                    vision_title: "رؤيتنا",
+                    vision_description: "رؤيتنا هي أن نكون المزود الرائد لخدمات اللوجستيات والشحن، معترف بنا عالمياً لالتزامنا بالتميز والنزاهة والاستدامة.",
+                    vision_point_1: "قيادة التغيير الإيجابي في الصناعة",
+                    vision_point_2: "إنشاء حلول صديقة للبيئة",
+                    vision_point_3: "أن نكون شريك موثوق وقادر",
+                    
+                    // Statistics Section
+                    stat_successful_shipments: "الشحنات الناجحة",
+                    stat_this_year: "هذا العام",
+                    stat_countries_served: "الدول المخدومة",
+                    stat_worldwide: "عالمياً",
+                    stat_ontime_delivery: "التسليم في الموعد",
+                    stat_success_rate: "معدل النجاح",
+                    stat_years_experience: "سنوات الخبرة",
+                    stat_industry_leader: "رائد الصناعة",
+                    
+                    // Story Section Headers
+                    story_subtitle: "قصتنا",
+                    story_title: "أكثر من 25 عام من التميز اللوجستي",
+                    btn_learn_more: "تعرف علينا أكثر",
+                    
+                    // Packaging & Storage Section Headers
+                    packaging_storage_title: "التعبئة والتخزين",
+                    packaging_storage_description: "التعبئة السليمة والتخزين الآمن أمران أساسيان لسلامة وسلامة بضائعك.",
                     
                     // CTA Section
-                    cta_title: "مستعد لتجربة تميز بوابات المحيط؟",
+                    cta_title: "مستعد لتجربة تميز Ocean Gates؟",
                     cta_description: "انضم إلى آلاف العملاء الراضين الذين يثقون بنا في احتياجاتهم اللوجستية.",
                     
                     // Features
@@ -6030,11 +6273,12 @@
                 }
 
                 setupEventListeners() {
-                    const languageButtons = document.querySelectorAll('.language-btn');
-                    languageButtons.forEach(btn => {
-                        btn.addEventListener('click', (e) => {
-                            const lang = e.target.closest('.language-btn').dataset.lang;
-                            this.switchLanguage(lang);
+                    const languageToggles = document.querySelectorAll('.language-toggle');
+                    languageToggles.forEach(toggle => {
+                        toggle.addEventListener('click', (e) => {
+                            // Toggle between languages
+                            const newLang = this.currentLang === 'en' ? 'ar' : 'en';
+                            this.switchLanguage(newLang);
                         });
                     });
                 }
@@ -6051,9 +6295,24 @@
                 }
 
                 updateLanguageButtons() {
-                    const languageButtons = document.querySelectorAll('.language-btn');
-                    languageButtons.forEach(btn => {
-                        btn.classList.toggle('active', btn.dataset.lang === this.currentLang);
+                    const languageToggles = document.querySelectorAll('.language-toggle');
+                    languageToggles.forEach(toggle => {
+                        // Add switching animation
+                        toggle.classList.add('switching');
+                        
+                        setTimeout(() => {
+                            const textSpan = toggle.querySelector('.toggle-text span');
+                            const mobileToggle = toggle.id === 'mobileLanguageToggle';
+                            
+                            if (this.currentLang === 'en') {
+                                textSpan.textContent = mobileToggle ? 'English' : 'EN';
+                            } else {
+                                textSpan.textContent = mobileToggle ? 'العربية' : 'عربي';
+                            }
+                            
+                            // Remove switching animation
+                            toggle.classList.remove('switching');
+                        }, 200);
                     });
                 }
 
@@ -6070,7 +6329,7 @@
 
                     // Update page title
                     if (this.currentLang === 'ar') {
-                        document.title = 'بوابات المحيط - خدمات النقل واللوجستيات';
+                        document.title = 'Ocean Gates - خدمات النقل واللوجستيات';
                     } else {
                         document.title = 'Ocean Gates - Transport & Logistics Services';
                     }
