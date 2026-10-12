@@ -106,6 +106,383 @@
                     margin-left: 0 !important;
                 }
             }
+
+            /* Customs Clearance & Hotline Hero Card */
+            .hero-customs-card {
+                background: linear-gradient(135deg, rgba(16, 26, 43, 0.85) 0%, rgba(10, 18, 30, 0.9) 100%);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border: 1.5px solid rgba(244, 185, 66, 0.45);
+                border-radius: 24px;
+                padding: 32px 28px;
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45), 0 0 30px rgba(244, 185, 66, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+                position: relative;
+                overflow: hidden;
+                transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                max-width: 520px;
+                margin: 0 auto;
+            }
+
+            .hero-customs-card::before {
+                content: '';
+                position: absolute;
+                top: -60px;
+                right: -60px;
+                width: 180px;
+                height: 180px;
+                background: radial-gradient(circle, rgba(244, 185, 66, 0.25) 0%, transparent 70%);
+                border-radius: 50%;
+                pointer-events: none;
+            }
+
+            [dir="rtl"] .hero-customs-card::before {
+                right: auto;
+                left: -60px;
+            }
+
+            .hero-customs-card:hover {
+                transform: translateY(-4px);
+                border-color: rgba(244, 185, 66, 0.75);
+                box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55), 0 0 40px rgba(244, 185, 66, 0.25);
+            }
+
+            [dir="rtl"] .hero-customs-card {
+                text-align: right;
+            }
+
+            [dir="ltr"] .hero-customs-card {
+                text-align: left;
+            }
+
+            .customs-card-top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 16px;
+            }
+
+            .customs-card-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: rgba(244, 185, 66, 0.15);
+                border: 1px solid rgba(244, 185, 66, 0.35);
+                color: #F4B942;
+                padding: 5px 14px;
+                border-radius: 30px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: 0.3px;
+            }
+
+            .customs-card-badge i {
+                font-size: 14px;
+            }
+
+            .customs-card-est {
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.6);
+                letter-spacing: 1.5px;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            .hero-customs-title {
+                font-size: 1.75rem;
+                font-weight: 700;
+                color: #ffffff;
+                margin: 0 0 8px 0;
+                line-height: 1.35;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+            }
+
+            .hero-customs-tagline {
+                font-size: 0.95rem;
+                color: #F4B942;
+                margin-bottom: 22px;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+            }
+
+            .hero-services-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+                margin-bottom: 24px;
+            }
+
+            .hero-service-box {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: 14px;
+                padding: 14px 6px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                transition: all 0.3s ease;
+                cursor: default;
+            }
+
+            .hero-service-box:hover {
+                background: rgba(244, 185, 66, 0.16);
+                border-color: rgba(244, 185, 66, 0.55);
+                transform: translateY(-3px);
+                box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+            }
+
+            .service-box-icon {
+                width: 36px;
+                height: 36px;
+                border-radius: 10px;
+                background: rgba(244, 185, 66, 0.15);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 8px;
+                transition: all 0.3s ease;
+            }
+
+            .service-box-icon i {
+                font-size: 18px;
+                color: #F4B942;
+                transition: all 0.3s ease;
+            }
+
+            .hero-service-box:hover .service-box-icon {
+                background: #F4B942;
+            }
+
+            .hero-service-box:hover .service-box-icon i {
+                color: #1a1a1a;
+                transform: scale(1.1);
+            }
+
+            .service-box-title {
+                font-size: 13px;
+                font-weight: 600;
+                color: #ffffff;
+                transition: color 0.3s ease;
+            }
+
+            .hero-service-box:hover .service-box-title {
+                color: #F4B942;
+            }
+
+            .hero-hotline-container {
+                position: relative;
+            }
+
+            .hero-hotline-card {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                background: linear-gradient(135deg, rgba(244, 185, 66, 0.18) 0%, rgba(244, 185, 66, 0.06) 100%);
+                border: 1.5px solid #F4B942;
+                border-radius: 16px;
+                padding: 14px 18px;
+                text-decoration: none !important;
+                transition: all 0.3s ease;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            }
+
+            .hero-hotline-card:hover {
+                background: linear-gradient(135deg, #F4B942 0%, #e8a930 100%);
+                box-shadow: 0 10px 28px rgba(244, 185, 66, 0.45);
+                transform: translateY(-2px);
+            }
+
+            .hotline-icon-wrapper {
+                width: 46px;
+                height: 46px;
+                border-radius: 12px;
+                background: rgba(244, 185, 66, 0.25);
+                color: #F4B942;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 22px;
+                position: relative;
+                flex-shrink: 0;
+                transition: all 0.3s ease;
+            }
+
+            .hotline-wave {
+                position: absolute;
+                inset: -3px;
+                border: 2px solid rgba(244, 185, 66, 0.65);
+                border-radius: 15px;
+                animation: wavePulse 2s infinite ease-out;
+            }
+
+            @keyframes wavePulse {
+                0% { transform: scale(0.95); opacity: 0.9; }
+                50% { transform: scale(1.25); opacity: 0; }
+                100% { transform: scale(0.95); opacity: 0; }
+            }
+
+            .hero-hotline-card:hover .hotline-icon-wrapper {
+                background: #1a1a1a;
+                color: #F4B942;
+            }
+
+            .hotline-text-group {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+            }
+
+            .hotline-sub {
+                font-size: 12px;
+                color: #F4B942;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                transition: color 0.3s ease;
+            }
+
+            .hotline-main-number {
+                font-size: 1.45rem;
+                font-weight: 700;
+                color: #ffffff;
+                letter-spacing: 1.5px;
+                line-height: 1.2;
+                font-family: 'Poppins', 'Tajawal', sans-serif;
+                transition: color 0.3s ease;
+            }
+
+            .hero-hotline-card:hover .hotline-sub {
+                color: #1a1a1a;
+            }
+
+            .hero-hotline-card:hover .hotline-main-number {
+                color: #1a1a1a;
+            }
+
+            .hotline-call-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                background: #F4B942;
+                color: #1a1a1a;
+                padding: 9px 15px;
+                border-radius: 20px;
+                font-size: 13px;
+                font-weight: 700;
+                flex-shrink: 0;
+                transition: all 0.3s ease;
+            }
+
+            .hero-hotline-card:hover .hotline-call-btn {
+                background: #1a1a1a;
+                color: #F4B942;
+            }
+
+            @media (max-width: 991px) {
+                .hero-customs-card {
+                    margin-top: 35px;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .hero-customs-card {
+                    padding: 24px 18px;
+                }
+                .hero-services-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                .hero-customs-title {
+                    font-size: 1.4rem;
+                }
+                .hotline-main-number {
+                    font-size: 1.25rem;
+                }
+                .hotline-call-btn {
+                    padding: 7px 11px;
+                    font-size: 12px;
+                }
+            }
+
+            /* Generous Section Spacing & Layout Breathing Room */
+            .pt-100 {
+                padding-top: 100px !important;
+            }
+
+            .pb-100 {
+                padding-bottom: 100px !important;
+            }
+
+            .py-100 {
+                padding-top: 100px !important;
+                padding-bottom: 100px !important;
+            }
+
+            .mission-vision-section,
+            .consultation-section,
+            .special-services-section,
+            .facilities-section,
+            .our-story-section,
+            .gallery-section,
+            .packaging-storage-section,
+            .terms-privacy-section,
+            .contact-section {
+                padding-top: 110px !important;
+                padding-bottom: 110px !important;
+                position: relative;
+            }
+
+            .section-header,
+            .section-title {
+                margin-bottom: 55px !important;
+            }
+
+            .mission-vision-card {
+                border: 1px solid #eef0f3;
+                box-shadow: 0 15px 45px rgba(0,0,0,0.07) !important;
+            }
+
+            @media (max-width: 991px) {
+                .mission-vision-section,
+                .consultation-section,
+                .special-services-section,
+                .facilities-section,
+                .our-story-section,
+                .gallery-section,
+                .packaging-storage-section,
+                .terms-privacy-section,
+                .contact-section,
+                .py-100,
+                .pt-100,
+                .pb-100 {
+                    padding-top: 75px !important;
+                    padding-bottom: 75px !important;
+                }
+
+                .section-header,
+                .section-title {
+                    margin-bottom: 35px !important;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .mission-vision-section,
+                .consultation-section,
+                .special-services-section,
+                .facilities-section,
+                .our-story-section,
+                .gallery-section,
+                .packaging-storage-section,
+                .terms-privacy-section,
+                .contact-section,
+                .py-100,
+                .pt-100,
+                .pb-100 {
+                    padding-top: 55px !important;
+                    padding-bottom: 55px !important;
+                }
+            }
             
             /* Professional Why Choose Us Section */
             .choose-style-two .choose-card {
@@ -4199,6 +4576,356 @@
             .theme-dark .feature-card span {
                 color: #F4B942 !important;
             }
+
+            /* ==========================================================================
+               Company Gallery Section & Lightbox Styles
+               ========================================================================== */
+            .gallery-section {
+                background: #f8f9fa;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .gallery-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle at 12% 18%, rgba(244, 185, 66, 0.05) 0%, transparent 45%),
+                            radial-gradient(circle at 88% 82%, rgba(244, 185, 66, 0.04) 0%, transparent 45%);
+                pointer-events: none;
+                z-index: 1;
+            }
+
+            .gallery-section .container {
+                position: relative;
+                z-index: 2;
+            }
+
+            .gallery-tag-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 7px 22px;
+                background: rgba(244, 185, 66, 0.12);
+                border: 1px solid rgba(244, 185, 66, 0.35);
+                border-radius: 50px;
+                color: #c8890c;
+                font-size: 0.88rem;
+                font-weight: 700;
+                letter-spacing: 0.5px;
+                margin-bottom: 16px;
+                text-transform: uppercase;
+            }
+
+            .gallery-tag-badge i {
+                font-size: 1rem;
+                color: #F4B942;
+            }
+
+            /* Gallery Filter Controls */
+            .gallery-filter-nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 12px;
+                margin-bottom: 50px;
+            }
+
+            .gallery-filter-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 9px;
+                padding: 10px 24px;
+                border-radius: 50px;
+                border: 1.5px solid #e2e8f0;
+                background: #ffffff;
+                color: #475569;
+                font-size: 0.94rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            }
+
+            .gallery-filter-btn:hover {
+                border-color: #F4B942;
+                color: #1e293b;
+                background: rgba(244, 185, 66, 0.08);
+                transform: translateY(-2px);
+            }
+
+            .gallery-filter-btn.active {
+                background: linear-gradient(135deg, #F4B942 0%, #e5a420 100%);
+                color: #111827;
+                border-color: #e5a420;
+                box-shadow: 0 8px 22px rgba(244, 185, 66, 0.38);
+                font-weight: 700;
+                transform: translateY(-2px);
+            }
+
+            .gallery-filter-btn i {
+                font-size: 0.95rem;
+            }
+
+            /* Gallery Card */
+            .gallery-item-wrap {
+                margin-bottom: 30px;
+                transition: transform 0.4s ease, opacity 0.4s ease;
+            }
+
+            .gallery-card {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                background: #ffffff;
+                border-radius: 18px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+                border: 1px solid rgba(226, 232, 240, 0.85);
+                text-decoration: none;
+                transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                position: relative;
+            }
+
+            .gallery-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 22px 48px rgba(244, 185, 66, 0.24);
+                border-color: rgba(244, 185, 66, 0.55);
+            }
+
+            .gallery-img-wrapper {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                background: #0f172a;
+            }
+
+            .gallery-card.featured-card .gallery-img-wrapper {
+                height: 380px;
+            }
+
+            .gallery-card.semi-featured-card .gallery-img-wrapper {
+                height: 310px;
+            }
+
+            .gallery-card.standard-card .gallery-img-wrapper {
+                height: 250px;
+            }
+
+            @media (max-width: 991px) {
+                .gallery-card.featured-card .gallery-img-wrapper,
+                .gallery-card.semi-featured-card .gallery-img-wrapper,
+                .gallery-card.standard-card .gallery-img-wrapper {
+                    height: 260px;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .gallery-card.featured-card .gallery-img-wrapper,
+                .gallery-card.semi-featured-card .gallery-img-wrapper,
+                .gallery-card.standard-card .gallery-img-wrapper {
+                    height: 220px;
+                }
+            }
+
+            .gallery-img-wrapper img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                transition: transform 0.65s cubic-bezier(0.165, 0.84, 0.44, 1), filter 0.4s ease;
+                display: block;
+            }
+
+            .gallery-card:hover .gallery-img-wrapper img {
+                transform: scale(1.08);
+                filter: brightness(1.04);
+            }
+
+            .gallery-overlay {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(180deg, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.78) 100%);
+                opacity: 0;
+                transition: opacity 0.35s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 2;
+            }
+
+            .gallery-card:hover .gallery-overlay {
+                opacity: 1;
+            }
+
+            .gallery-zoom-icon {
+                width: 56px;
+                height: 56px;
+                border-radius: 50%;
+                background: #F4B942;
+                color: #111827;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 22px;
+                transform: scale(0.6);
+                transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                box-shadow: 0 10px 25px rgba(244, 185, 66, 0.5);
+            }
+
+            .gallery-card:hover .gallery-zoom-icon {
+                transform: scale(1);
+            }
+
+            .gallery-pill-tag {
+                position: absolute;
+                top: 14px;
+                left: 14px;
+                z-index: 3;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 0.75rem;
+                font-weight: 700;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                background: rgba(17, 24, 39, 0.85);
+                color: #F4B942;
+                backdrop-filter: blur(8px);
+                border: 1px solid rgba(244, 185, 66, 0.45);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+
+            [dir="rtl"] .gallery-pill-tag {
+                left: auto;
+                right: 14px;
+            }
+
+            .gallery-content {
+                padding: 22px 24px;
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                background: #ffffff;
+                transition: background-color 0.3s ease;
+            }
+
+            .gallery-item-title {
+                font-size: 1.1rem;
+                font-weight: 700;
+                color: #0f172a;
+                margin-bottom: 8px;
+                line-height: 1.4;
+                transition: color 0.3s ease;
+            }
+
+            .gallery-card:hover .gallery-item-title {
+                color: #b87b00;
+            }
+
+            .gallery-item-desc {
+                font-size: 0.9rem;
+                color: #64748b;
+                margin-bottom: 0;
+                line-height: 1.55;
+            }
+
+            /* Dark Theme Support */
+            .theme-dark .gallery-section {
+                background: #111827 !important;
+            }
+
+            .theme-dark .gallery-section::before {
+                background: radial-gradient(circle at 12% 18%, rgba(244, 185, 66, 0.08) 0%, transparent 45%),
+                            radial-gradient(circle at 88% 82%, rgba(244, 185, 66, 0.05) 0%, transparent 45%);
+            }
+
+            .theme-dark .gallery-card {
+                background: #1e293b !important;
+                border-color: rgba(255, 255, 255, 0.08) !important;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            }
+
+            .theme-dark .gallery-card:hover {
+                box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65) !important;
+                border-color: rgba(244, 185, 66, 0.55) !important;
+            }
+
+            .theme-dark .gallery-content {
+                background: #1e293b !important;
+            }
+
+            .theme-dark .gallery-item-title {
+                color: #f1f5f9 !important;
+            }
+
+            .theme-dark .gallery-card:hover .gallery-item-title {
+                color: #F4B942 !important;
+            }
+
+            .theme-dark .gallery-item-desc {
+                color: #94a3b8 !important;
+            }
+
+            .theme-dark .gallery-filter-btn {
+                background: #1e293b;
+                border-color: #334155;
+                color: #cbd5e1;
+            }
+
+            .theme-dark .gallery-filter-btn:hover {
+                background: rgba(244, 185, 66, 0.15);
+                border-color: #F4B942;
+                color: #ffffff;
+            }
+
+            .theme-dark .gallery-filter-btn.active {
+                background: linear-gradient(135deg, #F4B942 0%, #e5a420 100%);
+                color: #111827;
+                border-color: #e5a420;
+            }
+
+            /* Magnific Popup Gallery Enhancements */
+            .mfp-bg {
+                background: rgba(10, 15, 29, 0.94) !important;
+                backdrop-filter: blur(10px);
+                opacity: 0.94 !important;
+            }
+
+            .mfp-figure figure {
+                border-radius: 14px;
+                overflow: hidden;
+            }
+
+            .mfp-bottom-bar {
+                margin-top: 12px !important;
+                padding: 14px 20px !important;
+                background: rgba(15, 23, 42, 0.92);
+                border-radius: 10px;
+                border: 1px solid rgba(244, 185, 66, 0.25);
+            }
+
+            .mfp-custom-caption {
+                text-align: start;
+            }
+
+            .mfp-counter {
+                color: #F4B942 !important;
+                font-weight: 700;
+                font-size: 0.95rem;
+            }
+
+            .mfp-arrow {
+                opacity: 0.85;
+                transition: opacity 0.3s;
+            }
+
+            .mfp-arrow:hover {
+                opacity: 1;
+            }
         </style>
     </head>
     <body>
@@ -4262,6 +4989,7 @@
                         </ul>
                     </li>
                     <li><a href="#features" class="mobile-menu-link" data-translate="nav_features">Features</a></li>
+                    <li><a href="#gallery" class="mobile-menu-link" data-translate="nav_gallery">Gallery</a></li>
                     <li><a href="#contact" class="mobile-menu-link" data-translate="nav_contact">Contact</a></li>
                 </ul>
                 
@@ -4279,7 +5007,8 @@
                     </div>
                     
                     <div class="mobile-contact-info">
-                        <p><i class="icofont-phone"></i> <span data-translate="phone1" dir="ltr">+966 56 846 6668</span></p>
+                        <p><i class="icofont-headphone-alt-1" style="color: #F4B942;"></i> <a href="tel:920010337" style="color: inherit; text-decoration: none;"><span data-translate="hero_hotline_label">Hotline</span>: <strong dir="ltr" style="color: #F4B942;">920010337</strong></a></p>
+                        <p><i class="icofont-phone"></i> <span data-translate="phone1" dir="ltr">+966 56 136 6668</span></p>
                         <p><i class="icofont-phone"></i> <span data-translate="phone2" dir="ltr">+966 55 355 1911</span></p>
                         <p><i class="icofont-envelope"></i> <span data-translate="email">info@ocean-gates.com</span></p>
                     </div>
@@ -4324,6 +5053,9 @@
                                     <a href="#features" class="nav-link" data-translate="nav_features">Features</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="#gallery" class="nav-link" data-translate="nav_gallery">Gallery</a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="#terms-privacy" class="nav-link" data-translate="nav_terms">Terms & Privacy</a>
                                 </li>
                                 <li class="nav-item">
@@ -4355,7 +5087,7 @@
                 <div class="d-table-cell">
                     <div class="container">
                         <div class="row align-items-center pb-70">
-                            <div class="col-lg-6 col-md-8">
+                            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
                                 <div class="banner-text text-left">
                                     <h1 data-translate="hero_title">Ocean Gates</h1>
                                     <h2 data-translate="hero_subtitle">Your Partner in Global Logistics</h2>
@@ -4367,8 +5099,56 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-4">
-                                <!-- Empty space for image background -->
+                            <div class="col-lg-6 col-md-12">
+                                <div class="hero-customs-card wow animate__animated animate__fadeIn" data-wow-duration="1.2s">
+                                    <div class="customs-card-top">
+                                        <div class="customs-card-badge">
+                                            <i class="icofont-badge"></i>
+                                            <span data-translate="hero_customs_badge">Certified Services</span>
+                                        </div>
+                                        <span class="customs-card-est">KSA • 1984</span>
+                                    </div>
+
+                                    <h3 class="hero-customs-title" data-translate="hero_customs_title">Ocean Gates for Customs Clearance</h3>
+
+                                    <p class="hero-customs-tagline" data-translate="hero_customs_tagline">Clearance • Transportation • Shipping • Transit</p>
+
+                                    <div class="hero-services-grid">
+                                        <div class="hero-service-box">
+                                            <div class="service-box-icon"><i class="icofont-law-document"></i></div>
+                                            <span class="service-box-title" data-translate="service_tag_clearance">Clearance</span>
+                                        </div>
+                                        <div class="hero-service-box">
+                                            <div class="service-box-icon"><i class="icofont-truck-loaded"></i></div>
+                                            <span class="service-box-title" data-translate="service_tag_transport">Transport</span>
+                                        </div>
+                                        <div class="hero-service-box">
+                                            <div class="service-box-icon"><i class="icofont-sail-boat-alt-1"></i></div>
+                                            <span class="service-box-title" data-translate="service_tag_shipping">Shipping</span>
+                                        </div>
+                                        <div class="hero-service-box">
+                                            <div class="service-box-icon"><i class="icofont-fast-delivery"></i></div>
+                                            <span class="service-box-title" data-translate="service_tag_transit">Transit</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="hero-hotline-container">
+                                        <a href="tel:920010337" class="hero-hotline-card">
+                                            <div class="hotline-icon-wrapper">
+                                                <i class="icofont-headphone-alt-1"></i>
+                                                <span class="hotline-wave"></span>
+                                            </div>
+                                            <div class="hotline-text-group">
+                                                <span class="hotline-sub" data-translate="hero_hotline_label">Hotline</span>
+                                                <span class="hotline-main-number" dir="ltr">920010337</span>
+                                            </div>
+                                            <div class="hotline-call-btn">
+                                                <span data-translate="hero_hotline_call">Call Now</span>
+                                                <i class="icofont-phone"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -4537,7 +5317,7 @@
         <!-- Why Choose Section End -->
 
         <!-- Mission and Vision Section Start -->
-        <section id="mission-vision" class="mission-vision-section py-100" style="background: #f8f9fa;">
+        <section id="mission-vision" class="mission-vision-section pt-100 pb-100" style="background: #ffffff;">
             <div class="container">
                 <!-- Section Header -->
                 <div class="row justify-content-center">
@@ -4634,7 +5414,7 @@
         <!-- Mission and Vision Section End -->
 
         <!-- Consultation Services Section Start -->
-        <section id="consultation" class="consultation-section py-100" style="background: #f8f9fa;">
+        <section id="consultation" class="consultation-section pt-100 pb-100" style="background: #f8f9fa;">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center mb-5">
@@ -4689,7 +5469,7 @@
         <!-- Consultation Services Section End -->
 
         <!-- Special Services Section Start -->
-        <section id="special-services" class="special-services-section py-100" style="background: #ffffff;">
+        <section id="special-services" class="special-services-section pt-100 pb-100" style="background: #ffffff;">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center mb-5">
@@ -4796,7 +5576,7 @@
         <!-- Features Section End -->    
  
         <!-- Facilities Section Start -->
-        <section class="facilities-section pb-100">
+        <section class="facilities-section pt-100 pb-100">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
@@ -4901,8 +5681,294 @@
         </section>
         <!-- Our Story Section End -->
 
+        <!-- Company Gallery Section Start -->
+        <section id="gallery" class="gallery-section pt-100 pb-100" style="background: #f8f9fa;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9 text-center mb-4">
+                        <div class="section-header">
+                            <span class="gallery-tag-badge">
+                                <i class="icofont-camera"></i> <span data-translate="gallery_badge">Partnerships & Media</span>
+                            </span>
+                            <h2 class="section-main-title" data-translate="gallery_title">Our Journey & Global Alliances</h2>
+                            <p class="section-subtitle" data-translate="gallery_subtitle" style="margin-top: 18px; max-width: 720px; margin-left: auto; margin-right: auto;">
+                                Highlights from our international freight alliance summits, bilateral partnerships, and global logistics milestones.
+                            </p>
+                        </div>
+
+                        <!-- Gallery Category Filter Tabs -->
+                        <div class="gallery-filter-nav">
+                            <button class="gallery-filter-btn active" data-filter="*">
+                                <i class="icofont-star"></i> <span data-translate="gallery_filter_all">All Photos</span>
+                            </button>
+                            <button class="gallery-filter-btn" data-filter=".cat-summits">
+                                <i class="icofont-globe-alt"></i> <span data-translate="gallery_filter_summits">Summits & Events</span>
+                            </button>
+                            <button class="gallery-filter-btn" data-filter=".cat-alliances">
+                                <i class="icofont-badge"></i> <span data-translate="gallery_filter_alliances">Global Alliances</span>
+                            </button>
+                            <button class="gallery-filter-btn" data-filter=".cat-meetings">
+                                <i class="icofont-handshake-deal"></i> <span data-translate="gallery_filter_meetings">B2B Partnerships</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Cards Grid -->
+                <div class="row gallery-grid">
+                    <!-- Item 1: Award Ceremony (Featured Wide Card) -->
+                    <div class="col-lg-8 col-md-12 gallery-item-wrap cat-alliances">
+                        <a href="assets/img/company/PHOTO-2026-10-10-22-50-07.jpg" class="gallery-card featured-card gallery-popup" title="Award & Membership Certificate - Arab World Freight Alliance">
+                            <div class="gallery-img-wrapper">
+                                <img src="assets/img/company/PHOTO-2026-10-10-22-50-07.jpg" alt="Award & Membership Certificate" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="icofont-search-2"></i>
+                                    </div>
+                                </div>
+                                <span class="gallery-pill-tag" data-translate="gallery_tag_alliance">Alliance</span>
+                            </div>
+                            <div class="gallery-content">
+                                <h3 class="gallery-item-title" data-translate="gallery_item_1_title">Award & Membership Certificate</h3>
+                                <p class="gallery-item-desc" data-translate="gallery_item_1_desc">Arab World Freight Alliance Summit honor & certified membership ceremony</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Item 2: Partner Wall (Semi-Featured Card) -->
+                    <div class="col-lg-4 col-md-12 gallery-item-wrap cat-alliances">
+                        <a href="assets/img/company/PHOTO-2026-10-10-22-50-39.jpg" class="gallery-card featured-card gallery-popup" title="Global Partners Recognition Wall - Ocean Gates">
+                            <div class="gallery-img-wrapper">
+                                <img src="assets/img/company/PHOTO-2026-10-10-22-50-39.jpg" alt="Global Partners Recognition Wall" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="icofont-search-2"></i>
+                                    </div>
+                                </div>
+                                <span class="gallery-pill-tag" data-translate="gallery_tag_partner">Partnership</span>
+                            </div>
+                            <div class="gallery-content">
+                                <h3 class="gallery-item-title" data-translate="gallery_item_2_title">Global Partners Recognition Wall</h3>
+                                <p class="gallery-item-desc" data-translate="gallery_item_2_desc">Ocean Gates featured among premier accredited international freight leaders</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Item 3: Plenary Session -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item-wrap cat-summits">
+                        <a href="assets/img/company/PHOTO-2026-10-10-23-13-00.jpg" class="gallery-card standard-card gallery-popup" title="International Freight Plenary Session">
+                            <div class="gallery-img-wrapper">
+                                <img src="assets/img/company/PHOTO-2026-10-10-23-13-00.jpg" alt="International Freight Plenary Session" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="icofont-search-2"></i>
+                                    </div>
+                                </div>
+                                <span class="gallery-pill-tag" data-translate="gallery_tag_summit">Summit</span>
+                            </div>
+                            <div class="gallery-content">
+                                <h3 class="gallery-item-title" data-translate="gallery_item_3_title">International Freight Plenary Session</h3>
+                                <p class="gallery-item-desc" data-translate="gallery_item_3_desc">Keynote assembly on global shipping developments and supply chains</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Item 4: Summit Delegation -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item-wrap cat-summits">
+                        <a href="assets/img/company/PHOTO-2026-10-10-23-07-06.jpg" class="gallery-card standard-card gallery-popup" title="Ocean Gates Summit Delegation">
+                            <div class="gallery-img-wrapper">
+                                <img src="assets/img/company/PHOTO-2026-10-10-23-07-06.jpg" alt="Ocean Gates Summit Delegation" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="icofont-search-2"></i>
+                                    </div>
+                                </div>
+                                <span class="gallery-pill-tag" data-translate="gallery_tag_delegation">Delegation</span>
+                            </div>
+                            <div class="gallery-content">
+                                <h3 class="gallery-item-title" data-translate="gallery_item_4_title">Ocean Gates Summit Delegation</h3>
+                                <p class="gallery-item-desc" data-translate="gallery_item_4_desc">Active participation at the annual worldwide freight leaders summit</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Item 5: Alliance Leadership Assembly -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item-wrap cat-summits">
+                        <a href="assets/img/company/PHOTO-2026-10-10-23-11-10.jpg" class="gallery-card standard-card gallery-popup" title="Alliance Leadership Gathering">
+                            <div class="gallery-img-wrapper">
+                                <img src="assets/img/company/PHOTO-2026-10-10-23-11-10.jpg" alt="Alliance Leadership Gathering" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="icofont-search-2"></i>
+                                    </div>
+                                </div>
+                                <span class="gallery-pill-tag" data-translate="gallery_tag_network">Network</span>
+                            </div>
+                            <div class="gallery-content">
+                                <h3 class="gallery-item-title" data-translate="gallery_item_5_title">Alliance Leadership Gathering</h3>
+                                <p class="gallery-item-desc" data-translate="gallery_item_5_desc">Executive gathering of global logistics networks and trade forwarders</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Item 6: Global Partner Delegates -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item-wrap cat-summits">
+                        <a href="assets/img/company/PHOTO-2026-10-10-23-11-11.jpg" class="gallery-card standard-card gallery-popup" title="Global Partner Delegates">
+                            <div class="gallery-img-wrapper">
+                                <img src="assets/img/company/PHOTO-2026-10-10-23-11-11.jpg" alt="Global Partner Delegates" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="icofont-search-2"></i>
+                                    </div>
+                                </div>
+                                <span class="gallery-pill-tag" data-translate="gallery_tag_network">Network</span>
+                            </div>
+                            <div class="gallery-content">
+                                <h3 class="gallery-item-title" data-translate="gallery_item_6_title">Global Partner Delegates</h3>
+                                <p class="gallery-item-desc" data-translate="gallery_item_6_desc">Expanding cross-continent logistics cooperation and maritime routes</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Item 7: B2B Meeting 1 -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item-wrap cat-meetings">
+                        <a href="assets/img/company/PHOTO-2026-10-10-23-05-51%202.jpg" class="gallery-card standard-card gallery-popup" title="Strategic B2B Consultation">
+                            <div class="gallery-img-wrapper">
+                                <img src="assets/img/company/PHOTO-2026-10-10-23-05-51%202.jpg" alt="Strategic B2B Consultation" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="icofont-search-2"></i>
+                                    </div>
+                                </div>
+                                <span class="gallery-pill-tag" data-translate="gallery_tag_b2b">B2B Meeting</span>
+                            </div>
+                            <div class="gallery-content">
+                                <h3 class="gallery-item-title" data-translate="gallery_item_7_title">Strategic B2B Consultation</h3>
+                                <p class="gallery-item-desc" data-translate="gallery_item_7_desc">One-on-one bilateral meetings strengthening Middle East freight corridors</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Item 8: B2B Meeting 2 -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item-wrap cat-meetings">
+                        <a href="assets/img/company/PHOTO-2026-10-10-23-05-51%203.jpg" class="gallery-card standard-card gallery-popup" title="Global Forwarding Agreements">
+                            <div class="gallery-img-wrapper">
+                                <img src="assets/img/company/PHOTO-2026-10-10-23-05-51%203.jpg" alt="Global Forwarding Agreements" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="icofont-search-2"></i>
+                                    </div>
+                                </div>
+                                <span class="gallery-pill-tag" data-translate="gallery_tag_b2b">B2B Meeting</span>
+                            </div>
+                            <div class="gallery-content">
+                                <h3 class="gallery-item-title" data-translate="gallery_item_8_title">Global Forwarding Agreements</h3>
+                                <p class="gallery-item-desc" data-translate="gallery_item_8_desc">Forging direct mutual shipping agency and freight forwarding contracts</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Item 9: B2B Meeting 3 -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item-wrap cat-meetings">
+                        <a href="assets/img/company/PHOTO-2026-10-10-23-05-51%204.jpg" class="gallery-card standard-card gallery-popup" title="Supply Chain Synergy Session">
+                            <div class="gallery-img-wrapper">
+                                <img src="assets/img/company/PHOTO-2026-10-10-23-05-51%204.jpg" alt="Supply Chain Synergy Session" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="icofont-search-2"></i>
+                                    </div>
+                                </div>
+                                <span class="gallery-pill-tag" data-translate="gallery_tag_b2b">B2B Meeting</span>
+                            </div>
+                            <div class="gallery-content">
+                                <h3 class="gallery-item-title" data-translate="gallery_item_9_title">Supply Chain Synergy Session</h3>
+                                <p class="gallery-item-desc" data-translate="gallery_item_9_desc">Collaborative discussions on cold chain, multimodal and air-sea logistics</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Item 10: Customs Discussion -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item-wrap cat-meetings">
+                        <a href="assets/img/company/PHOTO-2026-10-10-23-05-51.jpg" class="gallery-card standard-card gallery-popup" title="Customs & Transit Protocols">
+                            <div class="gallery-img-wrapper">
+                                <img src="assets/img/company/PHOTO-2026-10-10-23-05-51.jpg" alt="Customs & Transit Protocols" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="icofont-search-2"></i>
+                                    </div>
+                                </div>
+                                <span class="gallery-pill-tag" data-translate="gallery_tag_b2b">B2B Meeting</span>
+                            </div>
+                            <div class="gallery-content">
+                                <h3 class="gallery-item-title" data-translate="gallery_item_10_title">Customs & Transit Protocols</h3>
+                                <p class="gallery-item-desc" data-translate="gallery_item_10_desc">Harmonizing clearance speed and cross-border transit regulations</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Item 11: Executive Exchange -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item-wrap cat-meetings">
+                        <a href="assets/img/company/PHOTO-2026-10-10-23-05-52.jpg" class="gallery-card standard-card gallery-popup" title="Executive Logistics Exchange">
+                            <div class="gallery-img-wrapper">
+                                <img src="assets/img/company/PHOTO-2026-10-10-23-05-52.jpg" alt="Executive Logistics Exchange" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="icofont-search-2"></i>
+                                    </div>
+                                </div>
+                                <span class="gallery-pill-tag" data-translate="gallery_tag_b2b">B2B Meeting</span>
+                            </div>
+                            <div class="gallery-content">
+                                <h3 class="gallery-item-title" data-translate="gallery_item_11_title">Executive Logistics Exchange</h3>
+                                <p class="gallery-item-desc" data-translate="gallery_item_11_desc">High-level strategic dialogue on regional warehousing and distribution</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Item 12: Gala Dinner -->
+                    <div class="col-lg-6 col-md-6 col-sm-12 gallery-item-wrap cat-summits">
+                        <a href="assets/img/company/PHOTO-2026-10-10-23-07-43.jpg" class="gallery-card semi-featured-card gallery-popup" title="Alliance Annual Gala Dinner">
+                            <div class="gallery-img-wrapper">
+                                <img src="assets/img/company/PHOTO-2026-10-10-23-07-43.jpg" alt="Alliance Annual Gala Dinner" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="icofont-search-2"></i>
+                                    </div>
+                                </div>
+                                <span class="gallery-pill-tag" data-translate="gallery_tag_gala">Gala Event</span>
+                            </div>
+                            <div class="gallery-content">
+                                <h3 class="gallery-item-title" data-translate="gallery_item_12_title">Alliance Annual Gala Dinner</h3>
+                                <p class="gallery-item-desc" data-translate="gallery_item_12_desc">Celebrating excellence and partnership milestones with global freight executives</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Item 13: Strategic Partners Assembly -->
+                    <div class="col-lg-6 col-md-6 col-sm-12 gallery-item-wrap cat-alliances">
+                        <a href="assets/img/company/PHOTO-2026-10-10-23-05-50.jpg" class="gallery-card semi-featured-card gallery-popup" title="Strategic Partners Assembly">
+                            <div class="gallery-img-wrapper">
+                                <img src="assets/img/company/PHOTO-2026-10-10-23-05-50.jpg" alt="Strategic Partners Assembly" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-zoom-icon">
+                                        <i class="icofont-search-2"></i>
+                                    </div>
+                                </div>
+                                <span class="gallery-pill-tag" data-translate="gallery_tag_partner">Partnership</span>
+                            </div>
+                            <div class="gallery-content">
+                                <h3 class="gallery-item-title" data-translate="gallery_item_13_title">Strategic Partners Assembly</h3>
+                                <p class="gallery-item-desc" data-translate="gallery_item_13_desc">Fostering long-term relationships with leading international shipping lines</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Company Gallery Section End -->
+
         <!-- Packaging and Storage Section Start -->
-        <section id="packaging-storage" class="packaging-storage-section py-100" style="background: #f8f9fa;">
+        <section id="packaging-storage" class="packaging-storage-section pt-100 pb-100" style="background: #ffffff;">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center mb-5">
@@ -4916,7 +5982,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-6 mb-4">
-                        <div class="packaging-item" style="padding: 40px; background: white; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); height: 100%;">
+                        <div class="packaging-item" style="padding: 40px; background: #f8f9fa; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.06); border: 1px solid #eef0f3; height: 100%;">
                             <div class="packaging-icon mb-3">
                                 <i class="icofont-box" style="font-size: 50px; color: #F4B942;"></i>
                             </div>
@@ -4927,7 +5993,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 mb-4">
-                        <div class="storage-item" style="padding: 40px; background: white; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); height: 100%;">
+                        <div class="storage-item" style="padding: 40px; background: #f8f9fa; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.06); border: 1px solid #eef0f3; height: 100%;">
                             <div class="storage-icon mb-3">
                                 <i class="icofont-building-alt" style="font-size: 50px; color: #F4B942;"></i>
                             </div>
@@ -4943,7 +6009,7 @@
         <!-- Packaging and Storage Section End -->
 
         <!-- Terms and Privacy Section Start -->
-        <section id="terms-privacy" class="terms-privacy-section py-100" style="background: #ffffff;">
+        <section id="terms-privacy" class="terms-privacy-section pt-100 pb-100" style="background: #f8f9fa;">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
@@ -4956,7 +6022,7 @@
                         
                         <div class="row">
                             <div class="col-lg-6 mb-4">
-                                <div class="terms-card" style="padding: 35px; background: #f8f9fa; border-radius: 15px; height: 100%;">
+                                <div class="terms-card" style="padding: 35px; background: #ffffff; border-radius: 15px; height: 100%; border: 1px solid #eef0f3; box-shadow: 0 5px 25px rgba(0,0,0,0.05);">
                                     <div class="terms-icon mb-3">
                                         <i class="icofont-law-document" style="font-size: 45px; color: #F4B942;"></i>
                                     </div>
@@ -4967,7 +6033,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-4">
-                                <div class="privacy-card" style="padding: 35px; background: #f8f9fa; border-radius: 15px; height: 100%;">
+                                <div class="privacy-card" style="padding: 35px; background: #ffffff; border-radius: 15px; height: 100%; border: 1px solid #eef0f3; box-shadow: 0 5px 25px rgba(0,0,0,0.05);">
                                     <div class="privacy-icon mb-3">
                                         <i class="icofont-shield" style="font-size: 45px; color: #F4B942;"></i>
                                     </div>
@@ -5353,11 +6419,19 @@
                     </div>
                             <ul style="list-style: none; padding: 0; margin: 0;">
                                 <li style="margin-bottom: 10px;">
-                                    <a href="tel:+966568466668" style="color: #cccccc; text-decoration: none; display: flex; align-items: center; gap: 10px; padding: 6px 0; transition: all 0.3s ease;">
+                                    <a href="tel:920010337" style="color: #cccccc; text-decoration: none; display: flex; align-items: center; gap: 10px; padding: 6px 0; transition: all 0.3s ease;">
+                                        <div style="width: 28px; height: 28px; background: rgba(244, 185, 66, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                            <i class="icofont-headphone-alt-1" style="color: #F4B942; font-size: 14px;"></i>
+                                        </div>
+                                        <span style="font-size: 14px;"><span data-translate="hero_hotline_label">Hotline</span>: <strong dir="ltr" style="color: #F4B942;">920010337</strong></span>
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="tel:+966561366668" style="color: #cccccc; text-decoration: none; display: flex; align-items: center; gap: 10px; padding: 6px 0; transition: all 0.3s ease;">
                                         <div style="width: 28px; height: 28px; background: rgba(244, 185, 66, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
                                             <i class="icofont-phone" style="color: #F4B942; font-size: 14px;"></i>
                                         </div>
-                                        <span style="font-size: 14px;" data-translate="phone1" dir="ltr">+966 56 846 6668</span>
+                                        <span style="font-size: 14px;" data-translate="phone1" dir="ltr">+966 56 136 6668</span>
                                     </a>
                                 </li>         
                                 <li style="margin-bottom: 10px;">
@@ -5385,7 +6459,7 @@
                     </div>
                                 </li>         
                                 <li style="margin-bottom: 10px;">
-                                    <a href="https://wa.me/966568466668" target="_blank" style="color: #cccccc; text-decoration: none; display: flex; align-items: center; gap: 10px; padding: 6px 0; transition: all 0.3s ease;">
+                                    <a href="https://wa.me/966561366668" target="_blank" style="color: #cccccc; text-decoration: none; display: flex; align-items: center; gap: 10px; padding: 6px 0; transition: all 0.3s ease;">
                                         <div style="width: 28px; height: 28px; background: rgba(37, 211, 102, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
                                             <i class="icofont-whatsapp" style="color: #25d366; font-size: 14px;"></i>
                                         </div>
@@ -5420,7 +6494,7 @@
 
         <!-- WhatsApp Button -->
         <div class="whatsapp-btn">
-            <a href="https://wa.me/966568466668" target="_blank" title="Chat with us on WhatsApp">
+            <a href="https://wa.me/966561366668" target="_blank" title="Chat with us on WhatsApp">
                 <i class="icofont-whatsapp"></i>
             </a>
         </div>
@@ -5523,9 +6597,67 @@
         <script src="assets/js/wow.min.js"></script>
         <!-- Meanmenu JS -->
         <script src="assets/js/meanmenu.js"></script>
-        <!-- Custom JS -->
         <script src="assets/js/custom.js"></script>
         
+        <!-- Company Gallery Lightbox & Filter Script -->
+        <script>
+            $(document).ready(function() {
+                // Initialize Magnific Popup for Gallery
+                if ($.fn.magnificPopup) {
+                    $('.gallery-popup').magnificPopup({
+                        type: 'image',
+                        gallery: {
+                            enabled: true,
+                            navigateByImgClick: true,
+                            preload: [0, 2],
+                            tPrev: 'Previous (Left arrow key)',
+                            tNext: 'Next (Right arrow key)',
+                            tCounter: '<span class="mfp-counter">%curr% / %total%</span>'
+                        },
+                        image: {
+                            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+                            titleSrc: function(item) {
+                                const titleEl = item.el.find('.gallery-item-title');
+                                const descEl = item.el.find('.gallery-item-desc');
+                                let caption = '';
+                                if (titleEl.length) {
+                                    caption += '<strong style="color: #F4B942; font-size: 1.15rem; display: block; margin-bottom: 4px;">' + titleEl.text() + '</strong>';
+                                }
+                                if (descEl.length) {
+                                    caption += '<span style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.4; display: block;">' + descEl.text() + '</span>';
+                                }
+                                return caption || item.el.attr('title') || '';
+                            }
+                        },
+                        zoom: {
+                            enabled: true,
+                            duration: 300,
+                            easing: 'ease-in-out',
+                            opener: function(openerElement) {
+                                return openerElement.is('img') ? openerElement : openerElement.find('img');
+                            }
+                        }
+                    });
+                }
+
+                // Interactive Filter Controls
+                $('.gallery-filter-btn').on('click', function(e) {
+                    e.preventDefault();
+                    const filterValue = $(this).attr('data-filter');
+                    
+                    $('.gallery-filter-btn').removeClass('active');
+                    $(this).addClass('active');
+
+                    if (filterValue === '*') {
+                        $('.gallery-item-wrap').stop(true, true).fadeIn(350);
+                    } else {
+                        $('.gallery-item-wrap').stop(true, true).hide();
+                        $(filterValue).stop(true, true).fadeIn(350);
+                    }
+                });
+            });
+        </script>
+
         <!-- Smooth Scrolling and Navigation Active State Script -->
         <script>
             // Smooth scrolling for navigation links
@@ -5897,6 +7029,7 @@
                     nav_special_services: "Special Services",
                     nav_packaging: "Packaging & Storage",
                     nav_features: "Features",
+                    nav_gallery: "Gallery",
                     nav_terms: "Terms & Privacy",
                     nav_contact: "Contact",
                     
@@ -5908,6 +7041,15 @@
                     btn_our_services: "Our Services",
                     btn_get_quote: "Get Your Quote",
                     btn_explore_services: "Explore Services",
+                    hero_customs_badge: "Certified Services",
+                    hero_customs_title: "Ocean Gates for Customs Clearance",
+                    hero_customs_tagline: "Clearance • Transportation • Shipping • Transit",
+                    service_tag_clearance: "Clearance",
+                    service_tag_transport: "Transport",
+                    service_tag_shipping: "Shipping",
+                    service_tag_transit: "Transit",
+                    hero_hotline_label: "Hotline",
+                    hero_hotline_call: "Call Now",
                     
                     // About Section
                     about_title: "Why Choose Ocean Gates?",
@@ -6004,7 +7146,7 @@
                     packaging_secure_desc: "Our warehousing facilities are equipped with advanced security systems, including 24/7 surveillance, fire suppression systems, and controlled access. We offer both short-term and long-term storage options in a variety of environments, including climate-controlled spaces for sensitive goods.",
                     
                     // Contact Info
-                    phone1: "+966 56 846 6668",
+                    phone1: "+966 56 136 6668",
                     phone2: "+966 55 355 1911",
                     email: "info@ocean-gates.com",
                     
@@ -6074,7 +7216,49 @@
                     feature_2_title: "Global Network",
                     feature_2_desc: "Worldwide logistics coverage",
                     feature_3_title: "Secure Transport",
-                    feature_3_desc: "Safe and reliable delivery"
+                    feature_3_desc: "Safe and reliable delivery",
+
+                    // Company Gallery Section
+                    gallery_badge: "Partnerships & Media",
+                    gallery_title: "Our Journey & Global Alliances",
+                    gallery_subtitle: "Highlights from our international freight alliance summits, bilateral partnerships, and global logistics milestones.",
+                    gallery_filter_all: "All Photos",
+                    gallery_filter_summits: "Summits & Events",
+                    gallery_filter_alliances: "Global Alliances",
+                    gallery_filter_meetings: "B2B Partnerships",
+                    gallery_tag_alliance: "Alliance",
+                    gallery_tag_partner: "Partnership",
+                    gallery_tag_summit: "Summit",
+                    gallery_tag_delegation: "Delegation",
+                    gallery_tag_network: "Network",
+                    gallery_tag_b2b: "B2B Meeting",
+                    gallery_tag_gala: "Gala Event",
+                    gallery_item_1_title: "Award & Membership Certificate",
+                    gallery_item_1_desc: "Arab World Freight Alliance Summit honor & certified membership ceremony",
+                    gallery_item_2_title: "Global Partners Recognition Wall",
+                    gallery_item_2_desc: "Ocean Gates featured among premier accredited international freight leaders",
+                    gallery_item_3_title: "International Freight Plenary Session",
+                    gallery_item_3_desc: "Keynote assembly on global shipping developments and supply chains",
+                    gallery_item_4_title: "Ocean Gates Summit Delegation",
+                    gallery_item_4_desc: "Active participation at the annual worldwide freight leaders summit",
+                    gallery_item_5_title: "Alliance Leadership Gathering",
+                    gallery_item_5_desc: "Executive gathering of global logistics networks and trade forwarders",
+                    gallery_item_6_title: "Global Partner Delegates",
+                    gallery_item_6_desc: "Expanding cross-continent logistics cooperation and maritime routes",
+                    gallery_item_7_title: "Strategic B2B Consultation",
+                    gallery_item_7_desc: "One-on-one bilateral meetings strengthening Middle East freight corridors",
+                    gallery_item_8_title: "Global Forwarding Agreements",
+                    gallery_item_8_desc: "Forging direct mutual shipping agency and freight forwarding contracts",
+                    gallery_item_9_title: "Supply Chain Synergy Session",
+                    gallery_item_9_desc: "Collaborative discussions on cold chain, multimodal and air-sea logistics",
+                    gallery_item_10_title: "Customs & Transit Protocols",
+                    gallery_item_10_desc: "Harmonizing clearance speed and cross-border transit regulations",
+                    gallery_item_11_title: "Executive Logistics Exchange",
+                    gallery_item_11_desc: "High-level strategic dialogue on regional warehousing and distribution",
+                    gallery_item_12_title: "Alliance Annual Gala Dinner",
+                    gallery_item_12_desc: "Celebrating excellence and partnership milestones with global freight executives",
+                    gallery_item_13_title: "Strategic Partners Assembly",
+                    gallery_item_13_desc: "Fostering long-term relationships with leading international shipping lines"
                 },
                 ar: {
                     // Navigation
@@ -6088,21 +7272,31 @@
                     nav_special_services: "الخدمات المتخصصة",
                     nav_packaging: "التعبئة والتخزين",
                     nav_features: "المميزات",
+                    nav_gallery: "معرض الصور",
                     nav_terms: "الشروط والخصوصية",
                     nav_contact: "اتصل بنا",
                     
                     // Hero Section
-                    hero_title: "Ocean Gates",
+                    hero_title: "أبواب المحيط للتخليص الجمركي",
                     hero_subtitle: "شريكك في اللوجستيات العالمية",
-                    hero_description: "Ocean Gates هي مزود رائد للخدمات اللوجستية والشحن العالمي مع إرث من التميز يعود إلى عام 1984. مقرنا الرئيسي في المملكة العربية السعودية، وقد نمونا لنصبح اسماً موثوقاً في الصناعة، نقدم حلول سلسلة التوريد المخصصة والفعالة والآمنة التي تمتد عبر العالم.",
+                    hero_description: "أبواب المحيط للتخليص الجمركي هي مزود رائد للخدمات اللوجستية والشحن العالمي مع إرث من التميز يعود إلى عام 1984. مقرنا الرئيسي في المملكة العربية السعودية، وقد نمونا لنصبح اسماً موثوقاً في الصناعة، نقدم حلول سلسلة التوريد المخصصة والفعالة والآمنة التي تمتد عبر العالم.",
                     btn_get_consultation: "احصل على استشارة مجانية",
                     btn_our_services: "خدماتنا",
                     btn_get_quote: "احصل على عرض سعر",
                     btn_explore_services: "استكشف الخدمات",
+                    hero_customs_badge: "خدمات معتمدة",
+                    hero_customs_title: "أبواب المحيط للتخليص الجمركي",
+                    hero_customs_tagline: "تخليص • نقليات • شحن • ترانزيت",
+                    service_tag_clearance: "تخليص",
+                    service_tag_transport: "نقليات",
+                    service_tag_shipping: "شحن",
+                    service_tag_transit: "ترانزيت",
+                    hero_hotline_label: "الخط الساخن",
+                    hero_hotline_call: "اتصل الآن",
                     
                     // About Section
-                    about_title: "لماذا تختار Ocean Gates؟",
-                    about_description: "في Ocean Gates، ما يميزنا حقاً هو التزامنا الثابت بعملائنا. نحن لا نقوم بنقل البضائع فحسب، بل نبني شراكات.",
+                    about_title: "لماذا تختار أبواب المحيط للتخليص الجمركي؟",
+                    about_description: "في أبواب المحيط للتخليص الجمركي، ما يميزنا حقاً هو التزامنا الثابت بعملائنا. نحن لا نقوم بنقل البضائع فحسب، بل نبني شراكات.",
                     
                     // Foundation Section
                     foundation_title: "أساسنا",
@@ -6114,11 +7308,11 @@
                     
                     // Special Services Section
                     special_services_title: "الخدمات المتخصصة",
-                    special_services_description: "تتجاوز Ocean Gates اللوجستيات القياسية لتقدم مجموعة من الخدمات المتخصصة التي تلبي المتطلبات الفريدة والصعبة.",
+                    special_services_description: "تتجاوز أبواب المحيط للتخليص الجمركي اللوجستيات القياسية لتقدم مجموعة من الخدمات المتخصصة التي تلبي المتطلبات الفريدة والصعبة.",
                     
                     // Terms & Privacy Section
                     terms_privacy_title: "شروط الاستخدام وسياسة الخصوصية",
-                    terms_privacy_description: "تلتزم Ocean Gates بحماية خصوصيتك وضمان تجربة آمنة عبر الإنترنت.",
+                    terms_privacy_description: "تلتزم أبواب المحيط للتخليص الجمركي بحماية خصوصيتك وضمان تجربة آمنة عبر الإنترنت.",
                     terms_use_title: "شروط الاستخدام",
                     terms_use_description: "تحكم شروط استخدام موقعنا الإلكتروني وصولك واستخدامك لخدماتنا. باستخدام خدماتنا، فإنك توافق على الامتثال لشروطنا، بما في ذلك تلك المتعلقة بالاستخدام المقبول والملكية الفكرية وحدود المسؤولية.",
                     privacy_policy_title: "سياسة الخصوصية",
@@ -6195,19 +7389,19 @@
                     packaging_secure_desc: "مرافق التخزين لدينا مجهزة بأنظمة أمان متطورة، بما في ذلك المراقبة على مدار الساعة طوال أيام الأسبوع، وأنظمة إخماد الحرائق، والوصول المحكوم. نقدم خيارات التخزين قصيرة وطويلة الأمد في مجموعة متنوعة من البيئات، بما في ذلك المساحات المحكومة المناخ للبضائع الحساسة.",
                     
                     // Contact Info
-                    phone1: "+966 56 846 6668",
+                    phone1: "+966 56 136 6668",
                     phone2: "+966 55 355 1911",
                     email: "info@ocean-gates.com",
                     
                     // Footer
                     footer_company_title: "رائدة في اللوجستيات والشحن العالمي",
-                    footer_company_desc: "منذ عام 1984، كانت Ocean Gates شريكك الموثوق في اللوجستيات العالمية.",
+                    footer_company_desc: "منذ عام 1984، كانت أبواب المحيط للتخليص الجمركي شريكك الموثوق في اللوجستيات العالمية.",
                     footer_contact_title: "معلومات الاتصال",
-                    footer_copyright: "© Ocean Gates - مزود رائد للخدمات اللوجستية والشحن العالمي منذ 1984 | المقر الرئيسي في المملكة العربية السعودية",
+                    footer_copyright: "© أبواب المحيط للتخليص الجمركي - مزود رائد للخدمات اللوجستية والشحن العالمي منذ 1984 | المقر الرئيسي في المملكة العربية السعودية",
                     
                     // Story Section
                     story_badge: "قصتنا",
-                    story_intro: "تأسست منذ أكثر من 40 عاماً، بدأت Ocean Gates بمهمة بسيطة: تبسيط اللوجستيات للشركات من جميع الأحجام. من بداياتنا المتواضعة، نمونا لنصبح مزود لوجستيات دولي موثوق، معروف بموثوقيتنا وخبرتنا والتزامنا بعملائنا.",
+                    story_intro: "تأسست منذ أكثر من 40 عاماً، بدأت أبواب المحيط للتخليص الجمركي بمهمة بسيطة: تبسيط اللوجستيات للشركات من جميع الأحجام. من بداياتنا المتواضعة، نمونا لنصبح مزود لوجستيات دولي موثوق، معروف بموثوقيتنا وخبرتنا والتزامنا بعملائنا.",
                     story_detail: "كانت رحلتنا واحدة من النمو والتكيف المستمر. لقد احتضنا التقنيات الجديدة ووسعنا شبكتنا لتلبية المطالب المتطورة للتجارة العالمية، كل ذلك مع البقاء وفيين لقيمنا الأساسية من النزاهة وتميز الخدمة.",
                     
                     // Facilities Section
@@ -6256,7 +7450,7 @@
                     packaging_storage_description: "التعبئة السليمة والتخزين الآمن أمران أساسيان لسلامة وسلامة بضائعك.",
                     
                     // CTA Section
-                    cta_title: "مستعد لتجربة تميز Ocean Gates؟",
+                    cta_title: "مستعد لتجربة تميز أبواب المحيط للتخليص الجمركي؟",
                     cta_description: "انضم إلى آلاف العملاء الراضين الذين يثقون بنا في احتياجاتهم اللوجستية.",
                     
                     // Features
@@ -6265,7 +7459,49 @@
                     feature_2_title: "شبكة عالمية",
                     feature_2_desc: "تغطية لوجستية عالمية",
                     feature_3_title: "نقل آمن",
-                    feature_3_desc: "توصيل آمن وموثوق"
+                    feature_3_desc: "توصيل آمن وموثوق",
+
+                    // Company Gallery Section
+                    gallery_badge: "المركز الإعلامي والشركاء",
+                    gallery_title: "مسيرتنا وتحالفاتنا الدولية",
+                    gallery_subtitle: "مقتطفات من مشاركاتنا في مؤتمرات تحالفات الشحن العالمية واللقاءات الاستراتيجية والنجاحات اللوجستية.",
+                    gallery_filter_all: "جميع الصور",
+                    gallery_filter_summits: "المؤتمرات والفعاليات",
+                    gallery_filter_alliances: "التحالفات الدولية",
+                    gallery_filter_meetings: "اللقاءات الثنائية B2B",
+                    gallery_tag_alliance: "تحالف دولي",
+                    gallery_tag_partner: "شراكة استراتيجية",
+                    gallery_tag_summit: "مؤتمر سنوي",
+                    gallery_tag_delegation: "وفد رسمي",
+                    gallery_tag_network: "شبكة عالمية",
+                    gallery_tag_b2b: "اجتماع B2B",
+                    gallery_tag_gala: "حفل سنوي",
+                    gallery_item_1_title: "شهادة العضوية والتكريم الرسمي",
+                    gallery_item_1_desc: "تكريم أبواب المحيط واعتماد عضويتها الرسمية في الاتحاد العربي للشحن الجوي والبحري",
+                    gallery_item_2_title: "جدارية الشركاء المعتمدين دولياً",
+                    gallery_item_2_desc: "حضور شعار أبواب المحيط كشريك موثوق بين كبرى الشركات اللوجستية العالمية",
+                    gallery_item_3_title: "الجلسة العامة للمؤتمر الدولي",
+                    gallery_item_3_desc: "المشاركة في جلسات المؤتمر لمناقشة أحدث آليات الشحن وتطور سلاسل الإمداد",
+                    gallery_item_4_title: "وفد الشركة في الملتقى السنوي",
+                    gallery_item_4_desc: "حضور بارز لفريق أبواب المحيط لتمثيل قطاع التخليص والشحن السعودي دولياً",
+                    gallery_item_5_title: "الصورة التذكارية لقادة التحالف",
+                    gallery_item_5_desc: "تجمع نخبة من قيادات الشحن والخدمات اللوجستية في الملتقى السنوي",
+                    gallery_item_6_title: "ممثلو الشركاء العالميون",
+                    gallery_item_6_desc: "بناء جسور تعاون جديدة تعزز قدراتنا في الشحن عبر القارات",
+                    gallery_item_7_title: "اجتماعات العمل الثنائية B2B",
+                    gallery_item_7_desc: "مباحثات تفصيلية لتعزيز خدمات الشحن والنقل المباشر مع الشركاء الأجانب",
+                    gallery_item_8_title: "اتفاقيات الوكالات والخدمات اللوجستية",
+                    gallery_item_8_desc: "توسيع شبكة الوكلاء الحصريين لتأمين أسرع خدمات الشحن الجوي والبحري والبري",
+                    gallery_item_9_title: "تنسيق حلول سلاسل الإمداد",
+                    gallery_item_9_desc: "مناقشة تكامل عمليات النقل متعدد الوسائط والخدمات اللوجستية المتطورة",
+                    gallery_item_10_title: "بروتوكولات التخليص والترانزيت",
+                    gallery_item_10_desc: "تيسير إجراءات التخليص الجمركي وتطوير مسارات النقل العابر (ترانزيت)",
+                    gallery_item_11_title: "مباحثات قيادية لتطوير النقل",
+                    gallery_item_11_desc: "جلسة عمل تنفيذية لبحث حلول التخزين وإدارة التدفق التجاري الدولي",
+                    gallery_item_12_title: "حفل العشاء السنوي للتحالف",
+                    gallery_item_12_desc: "أمسية احتفالية تجمع رواد الشحن الدولي للاحتفاء بالشراكات الناجحة",
+                    gallery_item_13_title: "لقاء كبار الشركاء والوكلاء",
+                    gallery_item_13_desc: "ترسيخ العلاقات المشتركة مع كبرى خطوط الملاحة وشركات الشحن العالمية"
                 }
             };
 
@@ -6340,7 +7576,7 @@
 
                     // Update page title
                     if (this.currentLang === 'ar') {
-                        document.title = 'Ocean Gates - خدمات النقل واللوجستيات';
+                        document.title = 'أبواب المحيط للتخليص الجمركي - خدمات النقل واللوجستيات';
                     } else {
                         document.title = 'Ocean Gates - Transport & Logistics Services';
                     }
